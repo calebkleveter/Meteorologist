@@ -15,6 +15,7 @@
 		00B9A72C1E5267C900D675AB /* MeteorologistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9A72B1E5267C900D675AB /* MeteorologistTests.swift */; };
 		00B9A7371E5267C900D675AB /* MeteorologistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9A7361E5267C900D675AB /* MeteorologistUITests.swift */; };
 		00B9A7451E52694B00D675AB /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9A7441E52694B00D675AB /* APIClient.swift */; };
+		00B9A7471E526BDA00D675AB /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00B9A7461E526BDA00D675AB /* weathericons-regular-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		00B9A7361E5267C900D675AB /* MeteorologistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorologistUITests.swift; sourceTree = "<group>"; };
 		00B9A7381E5267C900D675AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00B9A7441E52694B00D675AB /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		00B9A7461E526BDA00D675AB /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				00B9A71F1E5267C900D675AB /* LaunchScreen.storyboard */,
 				00B9A7221E5267C900D675AB /* Info.plist */,
 				00B9A7441E52694B00D675AB /* APIClient.swift */,
+				00B9A7461E526BDA00D675AB /* weathericons-regular-webfont.ttf */,
 			);
 			path = Meteorologist;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				00B9A7211E5267C900D675AB /* LaunchScreen.storyboard in Resources */,
 				00B9A71E1E5267C900D675AB /* Assets.xcassets in Resources */,
+				00B9A7471E526BDA00D675AB /* weathericons-regular-webfont.ttf in Resources */,
 				00B9A71C1E5267C900D675AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
