@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 struct WeatherIcon {
-    enum Icon {}
+    enum Icon {
+        case clearDay
+    }
 }
