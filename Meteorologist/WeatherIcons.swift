@@ -19,5 +19,6 @@ struct WeatherIcon {
         case wind
         case fog
         case cloudy
+        case partlyCloudyDay
     }
 }
