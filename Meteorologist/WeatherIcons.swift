@@ -14,5 +14,6 @@ struct WeatherIcon {
         case clearDay
         case clearNight
         case rain
+        case snow
     }
 }
