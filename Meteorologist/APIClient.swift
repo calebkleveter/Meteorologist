@@ -26,3 +26,10 @@ enum DataTaskError: Error {
 protocol JSONInitable {
     init(json: JSON)
 }
+
+protocol APIClient {
+    var configuration: URLSessionConfiguration { get }
+    var session: URLSession { get }
+    
+    func dataTask(with request: URLRequest, endingWith completion: @escaping FetchCompletion) -> URLSessionDataTask
+}
