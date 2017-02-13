@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+public let CKNetworkingErrorDomain = "com.caleb-kleveter.Meteorologist.NetworkingError"
