@@ -9,3 +9,4 @@
 import Foundation
 
 public let CKNetworkingErrorDomain = "com.caleb-kleveter.Meteorologist.NetworkingError"
+public let MissingHTTPResponseError: Int = 0
