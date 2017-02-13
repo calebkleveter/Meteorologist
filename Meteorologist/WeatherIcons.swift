@@ -9,4 +9,6 @@
 import Foundation
 import UIKit
 
-struct WeatherIcon {}
+struct WeatherIcon {
+    enum Icon {}
+}
