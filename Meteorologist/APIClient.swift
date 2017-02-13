@@ -12,3 +12,12 @@ public let CKNetworkingErrorDomain = "com.caleb-kleveter.Meteorologist.Networkin
 public let MissingHTTPResponseError: Int = 0
 
 typealias JSON = [String: AnyObject?]
+
+enum DataTaskError: Error {
+    case badStatusCode(Int)
+    case cannotCastToHTTPURLResponse(NSError)
+    case dataTaskError(Error)
+    case noData
+    case jsonSerializationError(Error)
+    case noJson
+}
