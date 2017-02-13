@@ -13,5 +13,6 @@ struct WeatherIcon {
     enum Icon {
         case clearDay
         case clearNight
+        case rain
     }
 }
