@@ -22,3 +22,7 @@ enum DataTaskError: Error {
     case jsonSerializationError(Error)
     case noJson
 }
+
+protocol JSONInitable {
+    init(json: JSON)
+}
