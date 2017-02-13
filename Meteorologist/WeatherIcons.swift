@@ -18,5 +18,6 @@ struct WeatherIcon {
         case sleet
         case wind
         case fog
+        case cloudy
     }
 }
