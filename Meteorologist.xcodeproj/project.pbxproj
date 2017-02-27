@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0076A1C31E64A416002A026D /* WeatherTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A1C21E64A416002A026D /* WeatherTableController.swift */; };
 		00B9A7171E5267C900D675AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9A7161E5267C900D675AB /* AppDelegate.swift */; };
 		00B9A71C1E5267C900D675AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B9A71A1E5267C900D675AB /* Main.storyboard */; };
 		00B9A71E1E5267C900D675AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B9A71D1E5267C900D675AB /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0076A1C21E64A416002A026D /* WeatherTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableController.swift; sourceTree = "<group>"; };
 		00B9A7131E5267C900D675AB /* Meteorologist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteorologist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B9A7161E5267C900D675AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00B9A71B1E5267C900D675AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				00B9A7441E52694B00D675AB /* APIClient.swift */,
 				00B9A7461E526BDA00D675AB /* weathericons-regular-webfont.ttf */,
 				00B9A7481E526C4100D675AB /* WeatherIcons.swift */,
+				0076A1C21E64A416002A026D /* WeatherTableController.swift */,
 			);
 			path = Meteorologist;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				00B9A7491E526C4100D675AB /* WeatherIcons.swift in Sources */,
 				00B9A7171E5267C900D675AB /* AppDelegate.swift in Sources */,
 				00B9A7451E52694B00D675AB /* APIClient.swift in Sources */,
+				0076A1C31E64A416002A026D /* WeatherTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
