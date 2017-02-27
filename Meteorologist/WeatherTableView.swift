@@ -8,4 +8,6 @@
 
 import UIKit
 
-class WeatherTableView: UIView {}
+class WeatherTableView: UIView {
+    
+}

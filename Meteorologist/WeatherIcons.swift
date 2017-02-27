@@ -22,6 +22,7 @@ struct WeatherIcon {
         case partlyCloudyDay
         case partlyCloudyNight
         case unSupported
+        case up
         
         var hex: String {
             switch self {
@@ -36,6 +37,7 @@ struct WeatherIcon {
             case .partlyCloudyDay: return "\u{002}"
             case .partlyCloudyNight: return "\u{086}"
             case .unSupported: return "\u{07b}"
+            case .up: return "\u{058}"
             }
         }
     }
