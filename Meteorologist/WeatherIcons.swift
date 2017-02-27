@@ -25,6 +25,7 @@ struct WeatherIcon {
         case up
         case down
         case humidity
+        case precipitation
         
         var hex: String {
             switch self {
@@ -42,6 +43,7 @@ struct WeatherIcon {
             case .up: return "\u{058}"
             case .down: return "\u{044}"
             case .humidity: return "\u{07a}"
+            case .precipitation: return "\u{04e}"
             }
         }
     }
