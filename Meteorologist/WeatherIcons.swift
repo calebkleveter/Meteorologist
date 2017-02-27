@@ -11,7 +11,7 @@ import UIKit
 
 struct WeatherIcon {
     
-    func set(_ label: UILabel, textTo icon: Icon, with size: CGFloat) {
+    static func set(_ label: UILabel, textTo icon: Icon, with size: CGFloat) {
         label.textColor = .white
         label.font = UIFont(name: "weathericons-regular-webfont", size: size)
         label.text = icon.hex
