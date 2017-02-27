@@ -22,5 +22,21 @@ struct WeatherIcon {
         case partlyCloudyDay
         case partlyCloudyNight
         case unSupported
+        
+        var hex: String {
+            switch self {
+            case .clearDay: return "\u{00d}"
+            case .clearNight: return "\u{02e}"
+            case .rain: return "\u{019}"
+            case .snow: return "\u{01b}"
+            case .sleet: return "\u{0b5}"
+            case .wind: return "\u{050}"
+            case .fog: return "\u{014}"
+            case .cloudy: return "\u{013}"
+            case .partlyCloudyDay: return "\u{002}"
+            case .partlyCloudyNight: return "\u{086}"
+            case .unSupported: return "\u{07b}"
+            }
+        }
     }
 }
