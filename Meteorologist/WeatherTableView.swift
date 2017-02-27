@@ -9,5 +9,9 @@
 import UIKit
 
 class WeatherTableView: UIView {
-    
+    lazy var tempHighIcon: UILabel = {
+        let label = UILabel()
+        WeatherIcon().set(label, textTo: .up, with: 36)
+        return label
+    }()
 }
