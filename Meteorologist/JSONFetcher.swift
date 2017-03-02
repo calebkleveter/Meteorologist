@@ -8,4 +8,10 @@
 
 import Foundation
 
-struct JSONFetcher {}
+struct JSONFetcher: APIClient {
+    var configuration: URLSessionConfiguration
+    
+    init() {
+        self.configuration = URLSessionConfiguration.default
+    }
+}
