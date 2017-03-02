@@ -54,10 +54,12 @@ class WeatherTableView: UIView {
         self.addSubview(tempHighIcon)
         self.addSubview(tempHighLabel)
         self.addSubview(tempLowIcon)
+        self.addSubview(tempLowLabel)
         
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
         tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
         tempLowIcon.translatesAutoresizingMaskIntoConstraints = false
+        tempLowLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -73,7 +75,12 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: tempLowIcon, attribute: .top, relatedBy: .equal, toItem: tempHighIcon, attribute: .bottom, multiplier: 1.0, constant: 10),
                 NSLayoutConstraint(item: tempLowIcon, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 15),
                 tempLowIcon.heightAnchor.constraint(equalToConstant: 20),
-                tempLowIcon.widthAnchor.constraint(equalToConstant: 14)
+                tempLowIcon.widthAnchor.constraint(equalToConstant: 14),
+                
+                NSLayoutConstraint(item: tempLowLabel, attribute: .left, relatedBy: .equal, toItem: tempLowIcon, attribute: .right, multiplier: 1.0, constant: 10),
+                NSLayoutConstraint(item: tempLowLabel, attribute: .top, relatedBy: .equal, toItem: tempHighLabel, attribute: .bottom, multiplier: 1.0, constant: 10),
+                tempLowLabel.heightAnchor.constraint(equalToConstant: 20),
+                tempLowLabel.widthAnchor.constraint(equalToConstant: 50)
             ])
     }
 }
