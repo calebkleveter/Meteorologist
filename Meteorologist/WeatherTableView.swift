@@ -17,7 +17,7 @@ class WeatherTableView: UIView {
     
     lazy var tempHighLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 36)
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         label.textColor = .white
         label.backgroundColor = .clear
         // FIXME: - This is a placeholder
