@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+struct DailyWeather {}
