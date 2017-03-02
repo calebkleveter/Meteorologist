@@ -18,6 +18,7 @@
 		00B9A7491E526C4100D675AB /* WeatherIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9A7481E526C4100D675AB /* WeatherIcons.swift */; };
 		00BA6B0B1E68C5A00088151D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B0A1E68C5A00088151D /* GradientView.swift */; };
 		00BA6B0D1E68CDDB0088151D /* WeatherMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */; };
+		00BA6B0F1E68D5AF0088151D /* JSONFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B0E1E68D5AF0088151D /* JSONFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		00B9A7481E526C4100D675AB /* WeatherIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIcons.swift; sourceTree = "<group>"; };
 		00BA6B0A1E68C5A00088151D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMasterController.swift; sourceTree = "<group>"; };
+		00BA6B0E1E68D5AF0088151D /* JSONFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				0076A1C41E64A7C1002A026D /* WeatherTableView.swift */,
 				00BA6B0A1E68C5A00088151D /* GradientView.swift */,
 				00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */,
+				00BA6B0E1E68D5AF0088151D /* JSONFetcher.swift */,
 			);
 			path = Meteorologist;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				00BA6B0B1E68C5A00088151D /* GradientView.swift in Sources */,
 				00B9A7171E5267C900D675AB /* AppDelegate.swift in Sources */,
 				00B9A7451E52694B00D675AB /* APIClient.swift in Sources */,
+				00BA6B0F1E68D5AF0088151D /* JSONFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
