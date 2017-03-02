@@ -20,6 +20,12 @@ class WeatherTableController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewDidLayoutSubviews() {
+        let headerView = WeatherTableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 150))
+        headerView.backgroundColor = .gray
+        self.view.addSubview(headerView)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
