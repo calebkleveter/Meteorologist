@@ -31,6 +31,16 @@ class WeatherTableView: UIView {
         return label
     }()
     
+    lazy var tempLowLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        label.textColor = .white
+        label.backgroundColor = .clear
+        // FIXME: - This is a placeholder
+        label.text = "100º"
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
