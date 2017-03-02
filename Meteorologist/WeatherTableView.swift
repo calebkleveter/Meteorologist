@@ -25,6 +25,12 @@ class WeatherTableView: UIView {
         return label
     }()
     
+    lazy var tempLowIcon: UILabel = {
+        let label = UILabel()
+        WeatherIcon.set(label, textTo: .down, with: 36)
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
