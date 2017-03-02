@@ -36,14 +36,21 @@ class WeatherTableView: UIView {
     
     func configureLayout() {
         self.addSubview(tempHighIcon)
+        self.addSubview(tempHighLabel)
         
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
+        tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
                 NSLayoutConstraint(item: tempHighIcon, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 15),
                 tempHighIcon.heightAnchor.constraint(equalToConstant: 20),
-                tempHighIcon.widthAnchor.constraint(equalToConstant: 14)
+                tempHighIcon.widthAnchor.constraint(equalToConstant: 14),
+                
+                NSLayoutConstraint(item: tempHighLabel, attribute: .left, relatedBy: .equal, toItem: tempHighIcon, attribute: .right, multiplier: 1.0, constant: 10),
+                NSLayoutConstraint(item: tempHighLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
+                tempHighLabel.heightAnchor.constraint(equalToConstant: 20),
+                tempHighLabel.widthAnchor.constraint(equalToConstant: 20)
             ])
     }
 }
