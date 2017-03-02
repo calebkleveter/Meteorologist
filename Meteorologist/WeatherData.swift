@@ -9,3 +9,5 @@
 import Foundation
 
 struct DailyWeather {}
+
+struct CurrentWeather {}
