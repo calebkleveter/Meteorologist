@@ -12,7 +12,7 @@ struct JSONFetcher: APIClient {
     var configuration: URLSessionConfiguration
     
     lazy var session: URLSession = {
-        return URLSession(configuration: configuration)
+        return URLSession(configuration: self.configuration)
     }()
     
     init() {
