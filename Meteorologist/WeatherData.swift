@@ -17,6 +17,7 @@ struct CurrentWeather: JSONInitable {
     let humidity: Int?
     let windSpeed: Int?
     let summary: String?
+    let maxTemp: Int?
     
     init(json: JSON) {
         let current = json["currently"] as? JSON
@@ -26,5 +27,8 @@ struct CurrentWeather: JSONInitable {
         humidity = Int("\(current?["humidity"] ?? ("" as AnyObject))")
         windSpeed = Int("\(current?["windSpeed"] ?? ("" as AnyObject))")
         summary = "\(current?["summary"] ?? ("N/A" as AnyObject))"
+        
+        let daily = ((json["daily"] as? JSON)?["data"] as? [JSON])?[0]
+        maxTemp = Int("\(daily?["temperatureMax"] ?? ("" as AnyObject))")
     }
 }
