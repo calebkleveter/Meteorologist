@@ -10,4 +10,6 @@ import Foundation
 
 struct DailyWeather {}
 
-struct CurrentWeather {}
+struct CurrentWeather {
+    let maxTemp: WeatherIcon
+}
