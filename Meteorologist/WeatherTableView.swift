@@ -41,16 +41,6 @@ class WeatherTableView: UIView {
         return label
     }()
     
-    lazy var precipChanceLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-        label.textColor = .white
-        label.backgroundColor = .clear
-        // FIXME: - This is a placeholder
-        label.text = "100%"
-        return label
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
