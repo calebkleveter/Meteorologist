@@ -30,10 +30,10 @@ class WeatherTableView: UIView {
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-                NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 15),
-                NSLayoutConstraint(item: tempHighIcon, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 5),
-                tempHighIcon.heightAnchor.constraint(equalToConstant: 15),
-                tempHighIcon.widthAnchor.constraint(equalToConstant: 10)
+                NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
+                NSLayoutConstraint(item: tempHighIcon, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 15),
+                tempHighIcon.heightAnchor.constraint(equalToConstant: 20),
+                tempHighIcon.widthAnchor.constraint(equalToConstant: 14)
             ])
     }
 }
