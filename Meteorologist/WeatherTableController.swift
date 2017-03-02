@@ -12,7 +12,8 @@ class WeatherTableController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let gradient = GradientView(frame: self.view.frame)
+        self.view.addSubview(gradient)W
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
