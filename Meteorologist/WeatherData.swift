@@ -11,9 +11,9 @@ import Foundation
 struct DailyWeather {}
 
 struct CurrentWeather: JSONInitable {
-    let maxTemp: WeatherIcon.Icon
+    let icon: WeatherIcon.Icon
     
     init(json: JSON) {
-        maxTemp = WeatherIcon.Icon.getIcon(from: "\(json["icon"] ?? ("" as AnyObject))")
+        icon = WeatherIcon.Icon.getIcon(from: "\(json["icon"] ?? ("" as AnyObject))")
     }
 }
