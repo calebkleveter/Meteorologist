@@ -54,5 +54,21 @@ struct WeatherIcon {
             case .precipitation: return "\u{f04e}"
             }
         }
+        
+        static func getIcon(from string: String) -> Icon {
+            switch string.uppercased() {
+            case "CLEAR-DAY": return .clearDay
+            case "CLEAR-NIGHT": return .clearNight
+            case "RAIN": return .rain
+            case "SNOW": return .snow
+            case "SLEET": return .sleet
+            case "WIND": return .wind
+            case "FOG": return .fog
+            case "CLOUDY": return .cloudy
+            case "PARTLY-CLOUDY-DAY": return .partlyCloudyDay
+            case "PARTLY-CLOUDY-NIGHT": return . partlyCloudyNight
+            default: return .unSupported
+            }
+        }
     }
 }
