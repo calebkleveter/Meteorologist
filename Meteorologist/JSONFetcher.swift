@@ -9,13 +9,12 @@
 import Foundation
 
 struct JSONFetcher: APIClient {
+
     var configuration: URLSessionConfiguration
-    
-    lazy var session: URLSession = {
-        return URLSession(configuration: self.configuration)
-    }()
+    var session: URLSession
     
     init() {
         self.configuration = URLSessionConfiguration.default
+        self.session = URLSession(configuration: self.configuration)
     }
 }
