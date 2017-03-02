@@ -24,7 +24,6 @@ class WeatherTableController: UITableViewController {
 
     override func viewDidLayoutSubviews() {
         let headerView = WeatherTableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
-        headerView.backgroundColor = .gray
         self.view.addSubview(headerView)
     }
     
