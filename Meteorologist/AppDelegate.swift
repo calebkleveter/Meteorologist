@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window.backgroundColor = .white
         
-        let weatherTableController = WeatherTableController(style: .plain)
+        let weatherTableController = WeatherMasterController()
         let navigationController = UINavigationController(rootViewController: weatherTableController)
         
         window.rootViewController = navigationController
