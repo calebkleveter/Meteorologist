@@ -17,6 +17,7 @@
 		00B9A7471E526BDA00D675AB /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00B9A7461E526BDA00D675AB /* weathericons-regular-webfont.ttf */; };
 		00B9A7491E526C4100D675AB /* WeatherIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9A7481E526C4100D675AB /* WeatherIcons.swift */; };
 		00BA6B0B1E68C5A00088151D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B0A1E68C5A00088151D /* GradientView.swift */; };
+		00BA6B0D1E68CDDB0088151D /* WeatherMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		00B9A7461E526BDA00D675AB /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		00B9A7481E526C4100D675AB /* WeatherIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIcons.swift; sourceTree = "<group>"; };
 		00BA6B0A1E68C5A00088151D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMasterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				00B9A7481E526C4100D675AB /* WeatherIcons.swift */,
 				0076A1C41E64A7C1002A026D /* WeatherTableView.swift */,
 				00BA6B0A1E68C5A00088151D /* GradientView.swift */,
+				00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */,
 			);
 			path = Meteorologist;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00BA6B0D1E68CDDB0088151D /* WeatherMasterController.swift in Sources */,
 				0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */,
 				00B9A7491E526C4100D675AB /* WeatherIcons.swift in Sources */,
 				00BA6B0B1E68C5A00088151D /* GradientView.swift in Sources */,
