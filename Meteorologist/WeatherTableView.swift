@@ -50,7 +50,7 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: tempHighLabel, attribute: .left, relatedBy: .equal, toItem: tempHighIcon, attribute: .right, multiplier: 1.0, constant: 10),
                 NSLayoutConstraint(item: tempHighLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
                 tempHighLabel.heightAnchor.constraint(equalToConstant: 20),
-                tempHighLabel.widthAnchor.constraint(equalToConstant: 20)
+                tempHighLabel.widthAnchor.constraint(equalToConstant: 50)
             ])
     }
 }
