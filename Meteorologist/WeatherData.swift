@@ -10,6 +10,10 @@ import Foundation
 
 struct DailyWeather {}
 
-struct CurrentWeather {
-    let maxTemp: WeatherIcon
+struct CurrentWeather: JSONInitable {
+    let maxTemp: WeatherIcon.Icon
+    
+    init(json: JSON) {
+        maxTemp = WeatherIcon.Icon.getIcon(from: "\(json["icon"] ?? ("" as AnyObject))")
+    }
 }
