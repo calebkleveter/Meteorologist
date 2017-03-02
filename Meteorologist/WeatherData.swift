@@ -15,11 +15,13 @@ struct CurrentWeather: JSONInitable {
     let precipChance: Int?
     let currentTemp: Int?
     let humidity: Int?
+    let windSpeed: Int?
     
     init(json: JSON) {
         icon = WeatherIcon.Icon.getIcon(from: "\(json["icon"] ?? ("" as AnyObject))")
         precipChance = Int("\(json["precipProbability"] ?? ("" as AnyObject))")
         currentTemp = Int("\(json["temperature"] ?? ("" as AnyObject))")
         humidity = Int("\(json["humidity"] ?? ("" as AnyObject))")
+        windSpeed = Int("\(json["windSpeed"] ?? ("" as AnyObject))")
     }
 }
