@@ -18,7 +18,7 @@ struct CurrentWeather: JSONInitable {
     let currentTemp: Int?
     let humidity: Int?
     let windSpeed: Int?
-    let summary: String?
+    let summary: String
     let maxTemp: Int?
     let minTemp: Int?
     
