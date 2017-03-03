@@ -15,6 +15,7 @@ struct DailyWeather: JSONInitable {
     let maxTemp: Int?
     let minTemp: Int?
     let humidity: Int?
+    let windSpeed: Int?
     
     init(json: JSON) {
         icon = WeatherIcon.Icon.getIcon(from: "\(json["icon"] ?? ("" as AnyObject))")
@@ -23,6 +24,7 @@ struct DailyWeather: JSONInitable {
         maxTemp = Int("\(json["temperatureMax"] ?? ("" as AnyObject))")
         minTemp = Int("\(json["temperatureMin"] ?? ("" as AnyObject))")
         humidity = Int("\(json["humidity"] ?? ("" as AnyObject))")
+        windSpeed = Int("\(json["windSpeed"] ?? ("" as AnyObject))")
     }
 }
 
