@@ -12,11 +12,13 @@ struct DailyWeather: JSONInitable {
     let icon: WeatherIcon.Icon
     let summary: String
     let precipChance: Int?
+    let maxTemp: Int?
     
     init(json: JSON) {
         icon = WeatherIcon.Icon.getIcon(from: "\(json["icon"] ?? ("" as AnyObject))")
         summary = "\(json["summary"] ?? ("N/A" as AnyObject))"
         precipChance = Int("\(json["precipProbability"] ?? ("" as AnyObject))")
+        maxTemp = Int("\(json["temperatureMax"] ?? ("" as AnyObject))")
     }
 }
 
