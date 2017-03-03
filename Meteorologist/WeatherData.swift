@@ -11,10 +11,12 @@ import Foundation
 struct DailyWeather: JSONInitable {
     let icon: WeatherIcon.Icon
     let summary: String
+    let precipChance: Int?
     
     init(json: JSON) {
         icon = WeatherIcon.Icon.getIcon(from: "\(json["icon"] ?? ("" as AnyObject))")
         summary = "\(json["summary"] ?? ("N/A" as AnyObject))"
+        precipChance = Int("\(json["precipProbability"] ?? ("" as AnyObject))")
     }
 }
 
