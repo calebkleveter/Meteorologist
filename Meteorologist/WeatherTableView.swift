@@ -41,6 +41,16 @@ class WeatherTableView: UIView {
         return label
     }()
     
+    lazy var precipChanceLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        label.textColor = .white
+        label.backgroundColor = .clear
+        // FIXME: - This is a placeholder
+        label.text = "100%"
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
@@ -55,11 +65,13 @@ class WeatherTableView: UIView {
         self.addSubview(tempHighLabel)
         self.addSubview(tempLowIcon)
         self.addSubview(tempLowLabel)
+        self.addSubview(precipChanceLabel)
         
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
         tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
         tempLowIcon.translatesAutoresizingMaskIntoConstraints = false
         tempLowLabel.translatesAutoresizingMaskIntoConstraints = false
+        precipChanceLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -80,7 +92,12 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: tempLowLabel, attribute: .left, relatedBy: .equal, toItem: tempLowIcon, attribute: .right, multiplier: 1.0, constant: 10),
                 NSLayoutConstraint(item: tempLowLabel, attribute: .top, relatedBy: .equal, toItem: tempHighLabel, attribute: .bottom, multiplier: 1.0, constant: 10),
                 tempLowLabel.heightAnchor.constraint(equalToConstant: 20),
-                tempLowLabel.widthAnchor.constraint(equalToConstant: 50)
+                tempLowLabel.widthAnchor.constraint(equalToConstant: 50),
+                
+                NSLayoutConstraint(item: precipChanceLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -15),
+                NSLayoutConstraint(item: precipChanceLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
+                precipChanceLabel.heightAnchor.constraint(equalToConstant: 20),
+                precipChanceLabel.widthAnchor.constraint(equalToConstant: 55)
             ])
     }
 }
