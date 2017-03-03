@@ -11,44 +11,44 @@ import Foundation
 struct DailyWeather: JSONInitable {
     let icon: WeatherIcon.Icon
     let summary: String
-    let precipChance: Int?
-    let maxTemp: Int?
-    let minTemp: Int?
-    let humidity: Int?
-    let windSpeed: Int?
+    let precipChance: Float?
+    let maxTemp: Float?
+    let minTemp: Float?
+    let humidity: Float?
+    let windSpeed: Float?
     
     init(json: JSON) {
         icon = WeatherIcon.Icon.getIcon(from: "\(json["icon"] ?? ("" as AnyObject))")
         summary = "\(json["summary"] ?? ("N/A" as AnyObject))"
-        precipChance = Int("\(json["precipProbability"] ?? ("" as AnyObject))")
-        maxTemp = Int("\(json["temperatureMax"] ?? ("" as AnyObject))")
-        minTemp = Int("\(json["temperatureMin"] ?? ("" as AnyObject))")
-        humidity = Int("\(json["humidity"] ?? ("" as AnyObject))")
-        windSpeed = Int("\(json["windSpeed"] ?? ("" as AnyObject))")
+        precipChance = Float("\(json["precipProbability"] ?? ("" as AnyObject))")
+        maxTemp = Float("\(json["temperatureMax"] ?? ("" as AnyObject))")
+        minTemp = Float("\(json["temperatureMin"] ?? ("" as AnyObject))")
+        humidity = Float("\(json["humidity"] ?? ("" as AnyObject))")
+        windSpeed = Float("\(json["windSpeed"] ?? ("" as AnyObject))")
     }
 }
 
 struct CurrentWeather: JSONInitable {
     let icon: WeatherIcon.Icon
-    let precipChance: Int?
-    let currentTemp: Int?
-    let humidity: Int?
-    let windSpeed: Int?
+    let precipChance: Float?
+    let currentTemp: Float?
+    let humidity: Float?
+    let windSpeed: Float?
     let summary: String
-    let maxTemp: Int?
-    let minTemp: Int?
+    let maxTemp: Float?
+    let minTemp: Float?
     
     init(json: JSON) {
         let current = json["currently"] as? JSON
         icon = WeatherIcon.Icon.getIcon(from: "\(current?["icon"] ?? ("" as AnyObject))")
-        precipChance = Int("\(current?["precipProbability"] ?? ("" as AnyObject))")
-        currentTemp = Int("\(current?["temperature"] ?? ("" as AnyObject))")
-        humidity = Int("\(current?["humidity"] ?? ("" as AnyObject))")
-        windSpeed = Int("\(current?["windSpeed"] ?? ("" as AnyObject))")
+        precipChance = Float("\(current?["precipProbability"] ?? ("" as AnyObject))")
+        currentTemp = Float("\(current?["temperature"] ?? ("" as AnyObject))")
+        humidity = Float("\(current?["humidity"] ?? ("" as AnyObject))")
+        windSpeed = Float("\(current?["windSpeed"] ?? ("" as AnyObject))")
         summary = "\(current?["summary"] ?? ("N/A" as AnyObject))"
         
         let daily = ((json["daily"] as? JSON)?["data"] as? [JSON])?[0]
-        maxTemp = Int("\(daily?["temperatureMax"] ?? ("" as AnyObject))")
-        minTemp = Int("\(daily?["temperatureMin"] ?? ("" as AnyObject))")
+        maxTemp = Float("\(daily?["temperatureMax"] ?? ("" as AnyObject))")
+        minTemp = Float("\(daily?["temperatureMin"] ?? ("" as AnyObject))")
     }
 }
