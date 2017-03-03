@@ -11,7 +11,7 @@ import Foundation
 public let CKNetworkingErrorDomain = "com.caleb-kleveter.Meteorologist.NetworkingError"
 public let MissingHTTPResponseError: Int = 0
 
-typealias JSON = [String: AnyObject?]
+typealias JSON = [String: AnyObject]
 typealias FetchCompletion = (JSON?, HTTPURLResponse?, DataTaskError?) -> Void
 
 enum DataTaskError: Error {
