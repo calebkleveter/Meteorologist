@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct DailyWeather {}
+struct DailyWeather: JSONInitable {
+    init(json: JSON) {}
+}
 
 struct CurrentWeather: JSONInitable {
     let icon: WeatherIcon.Icon
