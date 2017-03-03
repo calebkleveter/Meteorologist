@@ -9,7 +9,11 @@
 import Foundation
 
 struct DailyWeather: JSONInitable {
-    init(json: JSON) {}
+    let icon: WeatherIcon.Icon
+    
+    init(json: JSON) {
+        icon = WeatherIcon.Icon.getIcon(from: "\(json["icon"] ?? ("" as AnyObject))")
+    }
 }
 
 struct CurrentWeather: JSONInitable {
