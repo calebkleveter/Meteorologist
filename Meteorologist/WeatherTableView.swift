@@ -73,6 +73,13 @@ class WeatherTableView: UIView {
         return label
     }()
     
+    lazy var currentWeatherIcon: UILabel = {
+        let label = UILabel()
+        WeatherIcon.set(label, textTo: .snow, with: 75)
+        label.textAlignment = NSTextAlignment.center
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
@@ -91,6 +98,7 @@ class WeatherTableView: UIView {
         self.addSubview(precipChanceIcon)
         self.addSubview(humidityLabel)
         self.addSubview(humidityIcon)
+        self.addSubview(currentWeatherIcon)
         
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
         tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -100,6 +108,7 @@ class WeatherTableView: UIView {
         precipChanceIcon.translatesAutoresizingMaskIntoConstraints = false
         humidityLabel.translatesAutoresizingMaskIntoConstraints = false
         humidityIcon.translatesAutoresizingMaskIntoConstraints = false
+        currentWeatherIcon.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -140,7 +149,12 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: humidityIcon, attribute: .right, relatedBy: .equal, toItem: humidityLabel, attribute: .left, multiplier: 1.0, constant: -10),
                 NSLayoutConstraint(item: humidityIcon, attribute: .top, relatedBy: .equal, toItem: precipChanceIcon, attribute: .bottom, multiplier: 1.0, constant: 3),
                 humidityIcon.heightAnchor.constraint(equalToConstant: 25),
-                humidityIcon.widthAnchor.constraint(equalToConstant: 17)
+                humidityIcon.widthAnchor.constraint(equalToConstant: 17),
+                
+                NSLayoutConstraint(item: currentWeatherIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
+                currentWeatherIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                currentWeatherIcon.heightAnchor.constraint(equalToConstant: 100),
+                currentWeatherIcon.widthAnchor.constraint(equalToConstant: 100)
             ])
     }
 }
