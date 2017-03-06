@@ -10,6 +10,8 @@ import UIKit
 
 class WeatherMasterController: UIViewController {
 
+//    let weatherFetch = JSONFetcher()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,10 @@ class WeatherMasterController: UIViewController {
         
         let dailyWeatherView = WeatherTableView(frame: CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200))
         self.view.addSubview(dailyWeatherView)
+        
+//        weatherFetch.getJSON(from: "https://api.darksky.net/forecast/e49cd06c8aaa9bd242728c21a1058b5f/37.8267,-122.4233") { (current, daily) in
+//            dailyWeatherView.reloadData(from: current)
+//        }
     }
     
     override func didReceiveMemoryWarning() {

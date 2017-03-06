@@ -75,7 +75,7 @@ class WeatherTableView: UIView {
     
     lazy var currentWeatherIcon: UILabel = {
         let label = UILabel()
-        WeatherIcon.set(label, textTo: .snow, with: 75)
+        WeatherIcon.set(label, textTo: .unSupported, with: 71)
         label.textAlignment = NSTextAlignment.center
         return label
     }()
@@ -105,7 +105,7 @@ class WeatherTableView: UIView {
         if let min = weather.minTemp { tempLowLabel.text = "\(Float(roundf(min*10)/10))º" } else { tempLowLabel.text = "N/A" }
         if let precip = weather.precipChance { precipChanceLabel.text = "\(Float(roundf(precip*1000)/10))%" } else { precipChanceLabel.text = "N/A" }
         if let humidity = weather.humidity { humidityLabel.text = "\(Float(roundf(humidity*1000)/10))%" } else { humidityLabel.text = "N/A" }
-        WeatherIcon.set(currentWeatherIcon, textTo: weather.icon, with: 75)
+        WeatherIcon.set(currentWeatherIcon, textTo: weather.icon, with: 71)
         summaryLabel.text = weather.summary
     }
     
