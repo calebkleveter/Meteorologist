@@ -11,6 +11,7 @@ import UIKit
 class WeatherMasterController: UIViewController {
 
     let weatherFetch = JSONFetcher()
+    let daily: [DailyWeather] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
