@@ -88,6 +88,7 @@ class WeatherTableView: UIView {
         // FIXME: - This is a placeholder
         label.text = "Really long weather summary that goes out of the frame of the iPhone screen."
         label.numberOfLines = 0
+        label.textAlignment = NSTextAlignment.center
         return label
     }()
     
