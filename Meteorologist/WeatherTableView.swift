@@ -144,7 +144,7 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: tempHighLabel, attribute: .left, relatedBy: .equal, toItem: tempHighIcon, attribute: .right, multiplier: 1.0, constant: 10),
                 NSLayoutConstraint(item: tempHighLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
                 tempHighLabel.heightAnchor.constraint(equalToConstant: 20),
-                tempHighLabel.widthAnchor.constraint(equalToConstant: 50),
+                tempHighLabel.widthAnchor.constraint(equalToConstant: 60),
                 
                 NSLayoutConstraint(item: tempLowIcon, attribute: .top, relatedBy: .equal, toItem: tempHighIcon, attribute: .bottom, multiplier: 1.0, constant: 10),
                 NSLayoutConstraint(item: tempLowIcon, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 15),
@@ -154,12 +154,12 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: tempLowLabel, attribute: .left, relatedBy: .equal, toItem: tempLowIcon, attribute: .right, multiplier: 1.0, constant: 10),
                 NSLayoutConstraint(item: tempLowLabel, attribute: .top, relatedBy: .equal, toItem: tempHighLabel, attribute: .bottom, multiplier: 1.0, constant: 10),
                 tempLowLabel.heightAnchor.constraint(equalToConstant: 20),
-                tempLowLabel.widthAnchor.constraint(equalToConstant: 50),
+                tempLowLabel.widthAnchor.constraint(equalToConstant: 60),
                 
                 NSLayoutConstraint(item: precipChanceLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -15),
                 NSLayoutConstraint(item: precipChanceLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
                 precipChanceLabel.heightAnchor.constraint(equalToConstant: 20),
-                precipChanceLabel.widthAnchor.constraint(equalToConstant: 55),
+                precipChanceLabel.widthAnchor.constraint(equalToConstant: 60),
                 
                 NSLayoutConstraint(item: precipChanceIcon, attribute: .right, relatedBy: .equal, toItem: precipChanceLabel, attribute: .left, multiplier: 1.0, constant: -10),
                 NSLayoutConstraint(item: precipChanceIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -169,7 +169,7 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: humidityLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -15),
                 NSLayoutConstraint(item: humidityLabel, attribute: .top, relatedBy: .equal, toItem: precipChanceLabel, attribute: .bottom, multiplier: 1.0, constant: 10),
                 humidityLabel.heightAnchor.constraint(equalToConstant: 20),
-                humidityLabel.widthAnchor.constraint(equalToConstant: 55),
+                humidityLabel.widthAnchor.constraint(equalToConstant: 60),
                 
                 NSLayoutConstraint(item: humidityIcon, attribute: .right, relatedBy: .equal, toItem: humidityLabel, attribute: .left, multiplier: 1.0, constant: -10),
                 NSLayoutConstraint(item: humidityIcon, attribute: .top, relatedBy: .equal, toItem: precipChanceIcon, attribute: .bottom, multiplier: 1.0, constant: 3),
