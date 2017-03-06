@@ -31,6 +31,16 @@ class DailyWeatherCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.configureLayout()
+        self.backgroundColor = .clear
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func configureLayout() {
         self.addSubview(dateLabel)
         
