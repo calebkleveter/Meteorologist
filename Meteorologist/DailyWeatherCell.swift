@@ -16,7 +16,7 @@ class DailyWeatherCell: UITableViewCell {
         label.textColor = .white
         label.backgroundColor = .clear
         // FIXME: - This is a placeholder
-        label.text = "Oct 23"
+        label.text = "Sept 23"
         return label
     }()
     
@@ -48,7 +48,7 @@ class DailyWeatherCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: dateLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 10),
-                dateLabel.widthAnchor.constraint(equalToConstant: 50)
+                dateLabel.widthAnchor.constraint(equalToConstant: 110)
             ])
     }
     
