@@ -30,8 +30,6 @@ struct JSONFetcher: APIClient {
                 let dailyData = ((json["daily"] as? JSON)?["data"] as? [JSON])
                 if let dailyWeather = dailyData?.map({ return DailyWeather(json: $0) }) {
                     completion(currentWeather, dailyWeather)
-                    print("Current: ", currentWeather)
-                    print("Daily: ", dailyWeather)
                 }
                 
             }).resume()
