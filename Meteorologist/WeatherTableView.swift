@@ -86,7 +86,8 @@ class WeatherTableView: UIView {
         label.textColor = .white
         label.backgroundColor = .clear
         // FIXME: - This is a placeholder
-        label.text = "Really long weather summary that goes out of the frame of the iPhone screen. I like unicorns."
+        label.text = "Really long weather summary that goes out of the frame of the iPhone screen."
+        label.numberOfLines = 0
         return label
     }()
     
@@ -171,7 +172,7 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: summaryLabel, attribute: .top, relatedBy: .equal, toItem: currentWeatherIcon, attribute: .bottom, multiplier: 1.0, constant: 25),
                 NSLayoutConstraint(item: summaryLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 30),
                 NSLayoutConstraint(item: summaryLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -30),
-                summaryLabel.heightAnchor.constraint(equalToConstant: 25)
+                summaryLabel.heightAnchor.constraint(equalToConstant: 52)
             ])
     }
 }
