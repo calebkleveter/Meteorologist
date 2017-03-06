@@ -80,6 +80,16 @@ class WeatherTableView: UIView {
         return label
     }()
     
+    lazy var summaryLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        label.textColor = .white
+        label.backgroundColor = .clear
+        // FIXME: - This is a placeholder
+        label.text = "Really long weather summary that goes out of the frame of the iPhone screen. I like unicorns."
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
@@ -99,6 +109,7 @@ class WeatherTableView: UIView {
         self.addSubview(humidityLabel)
         self.addSubview(humidityIcon)
         self.addSubview(currentWeatherIcon)
+        self.addSubview(summaryLabel)
         
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
         tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -109,6 +120,7 @@ class WeatherTableView: UIView {
         humidityLabel.translatesAutoresizingMaskIntoConstraints = false
         humidityIcon.translatesAutoresizingMaskIntoConstraints = false
         currentWeatherIcon.translatesAutoresizingMaskIntoConstraints = false
+        summaryLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -154,7 +166,12 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: currentWeatherIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
                 currentWeatherIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                 currentWeatherIcon.heightAnchor.constraint(equalToConstant: 100),
-                currentWeatherIcon.widthAnchor.constraint(equalToConstant: 100)
+                currentWeatherIcon.widthAnchor.constraint(equalToConstant: 100),
+                
+                NSLayoutConstraint(item: summaryLabel, attribute: .top, relatedBy: .equal, toItem: currentWeatherIcon, attribute: .bottom, multiplier: 1.0, constant: 25),
+                NSLayoutConstraint(item: summaryLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 30),
+                NSLayoutConstraint(item: summaryLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -30),
+                summaryLabel.heightAnchor.constraint(equalToConstant: 25)
             ])
     }
 }
