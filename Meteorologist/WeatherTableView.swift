@@ -57,6 +57,16 @@ class WeatherTableView: UIView {
         return label
     }()
     
+    lazy var humidityLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        label.textColor = .white
+        label.backgroundColor = .clear
+        // FIXME: - This is a placeholder
+        label.text = "100%"
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
@@ -73,6 +83,7 @@ class WeatherTableView: UIView {
         self.addSubview(tempLowLabel)
         self.addSubview(precipChanceLabel)
         self.addSubview(precipChanceIcon)
+        self.addSubview(humidityLabel)
         
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
         tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -80,6 +91,7 @@ class WeatherTableView: UIView {
         tempLowLabel.translatesAutoresizingMaskIntoConstraints = false
         precipChanceLabel.translatesAutoresizingMaskIntoConstraints = false
         precipChanceIcon.translatesAutoresizingMaskIntoConstraints = false
+        humidityLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -110,7 +122,12 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: precipChanceIcon, attribute: .right, relatedBy: .equal, toItem: precipChanceLabel, attribute: .left, multiplier: 1.0, constant: -10),
                 NSLayoutConstraint(item: precipChanceIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
                 precipChanceIcon.heightAnchor.constraint(equalToConstant: 25),
-                precipChanceIcon.widthAnchor.constraint(equalToConstant: 17)
+                precipChanceIcon.widthAnchor.constraint(equalToConstant: 17),
+                
+                NSLayoutConstraint(item: humidityLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -15),
+                NSLayoutConstraint(item: humidityLabel, attribute: .top, relatedBy: .equal, toItem: precipChanceLabel, attribute: .bottom, multiplier: 1.0, constant: 10),
+                humidityLabel.heightAnchor.constraint(equalToConstant: 20),
+                humidityLabel.widthAnchor.constraint(equalToConstant: 55)
             ])
     }
 }
