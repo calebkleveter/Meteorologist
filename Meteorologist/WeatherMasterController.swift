@@ -11,7 +11,7 @@ import UIKit
 class WeatherMasterController: UIViewController {
 
     let weatherFetch = JSONFetcher()
-    let daily: [DailyWeather] = []
+    var daily: [DailyWeather] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,8 @@ class WeatherMasterController: UIViewController {
         
         weatherFetch.getJSON(from: "https://api.darksky.net/forecast/e49cd06c8aaa9bd242728c21a1058b5f/37.8267,-122.4233") { (current, daily) in
             dailyWeatherView.reloadData(from: current)
+            self.daily = daily
+            dailyWeatherTable.reloadData()
         }
     }
     
