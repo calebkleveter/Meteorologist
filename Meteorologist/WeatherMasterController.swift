@@ -22,7 +22,9 @@ class WeatherMasterController: UIViewController {
         super.viewDidLayoutSubviews()
         
         let dailyWeatherView = WeatherTableView(frame: CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200))
+        let dailyWeatherTable = DailyWeatherTable(frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height - 200), style: .plain)
         self.view.addSubview(dailyWeatherView)
+        self.view.addSubview(dailyWeatherTable)
         
 //        weatherFetch.getJSON(from: "https://api.darksky.net/forecast/e49cd06c8aaa9bd242728c21a1058b5f/37.8267,-122.4233") { (current, daily) in
 //            dailyWeatherView.reloadData(from: current)
