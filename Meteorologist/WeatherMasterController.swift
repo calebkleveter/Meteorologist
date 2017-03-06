@@ -66,6 +66,8 @@ extension WeatherMasterController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = DailyWeatherCell()
+        cell.dateLabel.text = Date.abbreviatedDate(advancedBy: indexPath.row)
+        WeatherIcon.set(cell.iconLabel, textTo: daily[indexPath.row].icon, with: 40)
         return cell
     }
 }
