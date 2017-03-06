@@ -22,7 +22,8 @@ class WeatherMasterController: UIViewController {
         super.viewDidLayoutSubviews()
         
         let dailyWeatherView = WeatherTableView(frame: CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200))
-        let dailyWeatherTable = DailyWeatherTable(frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height - 200), style: .plain)
+        let dailyWeatherTable = DailyWeatherTable(frame: CGRect(x: 0, y: 250, width: self.view.frame.size.width, height: self.view.frame.size.height - 250), style: .plain)
+        dailyWeatherTable.dataSource = self
         self.view.addSubview(dailyWeatherView)
         self.view.addSubview(dailyWeatherTable)
         
@@ -47,4 +48,20 @@ class WeatherMasterController: UIViewController {
     }
     */
 
+}
+
+extension WeatherMasterController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = DailyWeatherCell(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: tableView.frame.size.height))
+        return cell
+    }
 }
