@@ -20,6 +20,12 @@ class DailyWeatherCell: UITableViewCell {
         return label
     }()
     
+    lazy var iconLabel: UILabel = {
+        let label = UILabel()
+        WeatherIcon.set(label, textTo: .unSupported, with: 40)
+        return label
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -43,13 +49,18 @@ class DailyWeatherCell: UITableViewCell {
     
     func configureLayout() {
         self.addSubview(dateLabel)
+        self.addSubview(iconLabel)
         
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        iconLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: dateLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
                 dateLabel.widthAnchor.constraint(equalToConstant: 110),
-                dateLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+                dateLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                
+                iconLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                iconLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
             ])
     }
     
