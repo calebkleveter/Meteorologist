@@ -48,6 +48,7 @@ class WeatherTableView: UIView {
         label.backgroundColor = .clear
         // FIXME: - This is a placeholder
         label.text = "100%"
+        label.textAlignment = .right
         return label
     }()
     
@@ -64,6 +65,7 @@ class WeatherTableView: UIView {
         label.backgroundColor = .clear
         // FIXME: - This is a placeholder
         label.text = "100%"
+        label.textAlignment = .right
         return label
     }()
     
@@ -80,6 +82,7 @@ class WeatherTableView: UIView {
         label.backgroundColor = .clear
         // FIXME: - This is a placeholder
         label.text = "100mph"
+        label.textAlignment = .right
         return label
     }()
     
