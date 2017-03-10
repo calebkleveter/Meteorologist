@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0073412F1E7372F1007F0B65 /* WeatherDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0073412E1E7372F1007F0B65 /* WeatherDetailController.swift */; };
 		0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A1C41E64A7C1002A026D /* WeatherTableView.swift */; };
 		00A59D611E6E06DC009B9C39 /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A59D601E6E06DC009B9C39 /* DailyWeatherCell.swift */; };
 		00A59D631E6E087F009B9C39 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A59D621E6E087F009B9C39 /* Date.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0073412E1E7372F1007F0B65 /* WeatherDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailController.swift; sourceTree = "<group>"; };
 		0076A1C41E64A7C1002A026D /* WeatherTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 		00A59D601E6E06DC009B9C39 /* DailyWeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
 		00A59D621E6E087F009B9C39 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */,
+				0073412E1E7372F1007F0B65 /* WeatherDetailController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				00A59D671E6E1EC1009B9C39 /* DetailWeatherView.swift in Sources */,
 				00BA6B0D1E68CDDB0088151D /* WeatherMasterController.swift in Sources */,
 				00A59D631E6E087F009B9C39 /* Date.swift in Sources */,
+				0073412F1E7372F1007F0B65 /* WeatherDetailController.swift in Sources */,
 				0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */,
 				00A59D651E6E10D9009B9C39 /* DailyWeatherTable.swift in Sources */,
 				00B9A7491E526C4100D675AB /* WeatherIcons.swift in Sources */,
