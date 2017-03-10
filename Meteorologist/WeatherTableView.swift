@@ -99,6 +99,17 @@ class WeatherTableView: UIView {
         return label
     }()
     
+    lazy var currentTempLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 30)
+        label.textColor = .white
+        label.backgroundColor = .clear
+        // FIXME: - This is a placeholder
+        label.text = "100.0º"
+        label.textAlignment = .center
+        return label
+    }()
+    
     lazy var summaryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
@@ -145,6 +156,7 @@ class WeatherTableView: UIView {
         self.addSubview(summaryLabel)
         self.addSubview(windSpeedLabel)
         self.addSubview(windSpeedIcon)
+        self.addSubview(currentTempLabel)
         
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
         tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -158,6 +170,7 @@ class WeatherTableView: UIView {
         summaryLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedIcon.translatesAutoresizingMaskIntoConstraints = false
+        currentTempLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -214,6 +227,11 @@ class WeatherTableView: UIView {
                 currentWeatherIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                 currentWeatherIcon.heightAnchor.constraint(equalToConstant: 100),
                 currentWeatherIcon.widthAnchor.constraint(equalToConstant: 100),
+                
+                NSLayoutConstraint(item: currentTempLabel, attribute: .top, relatedBy: .equal, toItem: currentWeatherIcon, attribute: .bottom, multiplier: 1.0, constant: 0),
+                NSLayoutConstraint(item: currentTempLabel, attribute: .bottom, relatedBy: .equal, toItem: summaryLabel, attribute: .top, multiplier: 1.0, constant: 0),
+                currentTempLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                currentTempLabel.widthAnchor.constraint(equalToConstant: 100),
                 
                 NSLayoutConstraint(item: summaryLabel, attribute: .top, relatedBy: .equal, toItem: currentWeatherIcon, attribute: .bottom, multiplier: 1.0, constant: 25),
                 NSLayoutConstraint(item: summaryLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 30),
