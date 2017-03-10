@@ -73,6 +73,16 @@ class WeatherTableView: UIView {
         return label
     }()
     
+    lazy var windSpeedLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        label.textColor = .white
+        label.backgroundColor = .clear
+        // FIXME: - This is a placeholder
+        label.text = "100mph"
+        return label
+    }()
+    
     lazy var currentWeatherIcon: UILabel = {
         let label = UILabel()
         WeatherIcon.set(label, textTo: .unSupported, with: 71)
@@ -123,6 +133,7 @@ class WeatherTableView: UIView {
         self.addSubview(humidityIcon)
         self.addSubview(currentWeatherIcon)
         self.addSubview(summaryLabel)
+        self.addSubview(windSpeedLabel)
         
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
         tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -134,6 +145,7 @@ class WeatherTableView: UIView {
         humidityIcon.translatesAutoresizingMaskIntoConstraints = false
         currentWeatherIcon.translatesAutoresizingMaskIntoConstraints = false
         summaryLabel.translatesAutoresizingMaskIntoConstraints = false
+        windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -175,6 +187,11 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: humidityIcon, attribute: .top, relatedBy: .equal, toItem: precipChanceIcon, attribute: .bottom, multiplier: 1.0, constant: 3),
                 humidityIcon.heightAnchor.constraint(equalToConstant: 25),
                 humidityIcon.widthAnchor.constraint(equalToConstant: 17),
+                
+                NSLayoutConstraint(item: windSpeedLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -15),
+                NSLayoutConstraint(item: windSpeedLabel, attribute: .top, relatedBy: .equal, toItem: humidityLabel, attribute: .bottom, multiplier: 1.0, constant: 10),
+                windSpeedLabel.heightAnchor.constraint(equalToConstant: 20),
+                windSpeedLabel.widthAnchor.constraint(equalToConstant: 75),
                 
                 NSLayoutConstraint(item: currentWeatherIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
                 currentWeatherIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
