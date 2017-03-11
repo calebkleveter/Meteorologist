@@ -11,6 +11,7 @@ import UIKit
 class WeatherDetailController: UIViewController {
 
     let weatherView = WeatherDetailController()
+    let weatherData: DailyWeather?
     
     override func viewDidLoad() {
         super.viewDidLoad()
