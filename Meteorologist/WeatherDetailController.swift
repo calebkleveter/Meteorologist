@@ -10,8 +10,16 @@ import UIKit
 
 class WeatherDetailController: UIViewController {
 
-    let weatherView = WeatherDetailController()
-    let weatherData: DailyWeather?
+    let weatherView = DetailWeatherView()
+    let weatherData: DailyWeather
+    
+    init(with weatherData: DailyWeather) {
+        self.weatherData = weatherData
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
