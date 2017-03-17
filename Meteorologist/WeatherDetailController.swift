@@ -10,15 +10,12 @@ import UIKit
 
 class WeatherDetailController: UIViewController {
 
-    let weatherView = DetailWeatherView()
     let weatherData: DailyWeather
+    var weatherView: DetailWeatherView?
     
     init(with weatherData: DailyWeather) {
         self.weatherData = weatherData
         super.init(nibName: nil, bundle: nil)
-        weatherView.reloadData(with: weatherData)
-        weatherView.frame = view.frame
-        self.view = weatherView
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,6 +27,13 @@ class WeatherDetailController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        weatherView = DetailWeatherView(frame: self.view.frame)
+        guard let view = weatherView else { fatalError("Init did not work") }
+        self.view.addSubview(view)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

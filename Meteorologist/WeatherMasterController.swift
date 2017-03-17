@@ -82,7 +82,7 @@ extension WeatherMasterController: UITableViewDelegate {
         if let cell = tableView.cellForRow(at: indexPath) {
             print("The cell exists")
             let detailController = WeatherDetailController(with: daily[indexPath.row])
-            detailController.weatherView.dayLabel.text = (cell as? DailyWeatherCell)?.dateLabel.text ?? "N/A"
+            detailController.weatherView?.dayLabel.text = (cell as? DailyWeatherCell)?.dateLabel.text ?? "N/A"
             self.show(detailController, sender: self)
         }
     }
