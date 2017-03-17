@@ -124,7 +124,7 @@ class DetailWeatherView: UIView {
     }()
     
     lazy var attributionImageView: UIImageView = {
-        if let image = UIImage(named: "poweredby-online") {
+        if let image = UIImage(named: "poweredby-oneline") {
             return UIImageView(image: image)
         } else { fatalError("Image does not exist") }
     }()
