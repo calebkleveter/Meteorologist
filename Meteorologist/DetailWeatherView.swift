@@ -139,6 +139,18 @@ class DetailWeatherView: UIView {
         }
     }
     
+    func reloadData(with weather: DailyWeather) {
+        DispatchQueue.main.async {
+            if let max = weather.maxTemp { self.maxTempLabel.text = "\(Float(roundf(max*10)/10))º" } else { self.maxTempLabel.text = "N/A" }
+            if let min = weather.minTemp { self.minTempLabel.text = "\(Float(roundf(min*10)/10))º" } else { self.minTempLabel.text = "N/A" }
+            if let precip = weather.precipChance { self.precipChanceLabel.text = "\(Float(roundf(precip*1000)/10))%" } else { self.precipChanceLabel.text = "N/A" }
+            if let humidity = weather.humidity { self.humidityLabel.text = "\(Float(roundf(humidity*1000)/10))%" } else { self.humidityLabel.text = "N/A" }
+            if let windSpeed = weather.windSpeed { self.windSpeedLabel.text = "\(Int(roundf(windSpeed*100)/10))mph" } else { self.windSpeedLabel.text = "N/A" }
+            WeatherIcon.set(self.weatherIcon, textTo: weather.icon, with: 76)
+            self.summaryLabel.text = weather.summary
+        }
+    }
+    
     func configureLayout() {
         
         let smallLabelWidths = (self.frame.size.width - 40) / 5
