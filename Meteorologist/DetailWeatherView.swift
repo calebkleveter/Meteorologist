@@ -128,4 +128,14 @@ class DetailWeatherView: UIView {
             return image
         } else { fatalError("Image does not exist") }
     }()
+    
+    lazy var attributionSelectGesture: UITapGestureRecognizer = {
+        return UITapGestureRecognizer(target: self.attributionImage, action: #selector(DetailWeatherView.attributionSelector))
+    }()
+    
+    @objc func attributionSelector() {
+        if let url = URL(string: "https://darksky.net/poweredby/") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
