@@ -111,4 +111,15 @@ class DetailWeatherView: UIView {
         WeatherIcon.set(label, textTo: .wind, with: 20)
         return label
     }()
+    
+    lazy var summaryLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .clear
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        // FIXME: - Remove placholder
+        label.text = "Really super long two line summary that needs a tall label. There, that should be enough text."
+        return label
+    }()
 }
