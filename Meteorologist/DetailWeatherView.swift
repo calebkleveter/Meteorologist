@@ -9,9 +9,23 @@
 import UIKit
 
 class DetailWeatherView: UIView {
+    
+    lazy var dayLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .clear
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        // FIXME: - Remove placholder
+        label.text = "October 23"
+        return label
+    }()
+    
     lazy var weatherIcon: UILabel = {
         let label = UILabel()
         WeatherIcon.set(label, textTo: .unSupported, with: 76)
         return label
     }()
+    
+    
 }
