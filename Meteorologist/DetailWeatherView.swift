@@ -55,6 +55,12 @@ class DetailWeatherView: UIView {
         return label
     }()
     
+    lazy var maxTempIcon: UILabel = {
+        let label = UILabel()
+        WeatherIcon.set(label, textTo: .up, with: 20)
+        return label
+    }()
+    
     lazy var minTempLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
