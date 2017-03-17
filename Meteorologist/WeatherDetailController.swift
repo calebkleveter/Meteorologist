@@ -16,6 +16,7 @@ class WeatherDetailController: UIViewController {
     init(with weatherData: DailyWeather) {
         self.weatherData = weatherData
         super.init(nibName: nil, bundle: nil)
+        weatherView.reloadData(with: weatherData)
         weatherView.frame = view.frame
         self.view = weatherView
     }
@@ -26,7 +27,6 @@ class WeatherDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
