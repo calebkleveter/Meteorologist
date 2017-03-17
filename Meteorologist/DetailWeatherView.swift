@@ -23,7 +23,8 @@ class DetailWeatherView: UIView {
     
     lazy var weatherIcon: UILabel = {
         let label = UILabel()
-        WeatherIcon.set(label, textTo: .unSupported, with: 76)
+        WeatherIcon.set(label, textTo: .partlyCloudyDay, with: 87)
+        label.textAlignment = .center
         return label
     }()
     
@@ -170,7 +171,7 @@ class DetailWeatherView: UIView {
         let smallLabelWidths = (self.frame.size.width - 40) / 5
         
         self.addSubview(dayLabel)
-//        self.addSubview(weatherIcon)
+        self.addSubview(weatherIcon)
 //        self.addSubview(precipChanceLabel)
 //        self.addSubview(precipChanceIcon)
 //        self.addSubview(maxTempLabel)
@@ -186,7 +187,7 @@ class DetailWeatherView: UIView {
 //        attributionImageView.addGestureRecognizer(attributionSelectGesture)
         
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
-//        weatherIcon.translatesAutoresizingMaskIntoConstraints = false
+        weatherIcon.translatesAutoresizingMaskIntoConstraints = false
 //        precipChanceLabel.translatesAutoresizingMaskIntoConstraints = false
 //        precipChanceIcon.translatesAutoresizingMaskIntoConstraints = false
 //        maxTempLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -202,16 +203,14 @@ class DetailWeatherView: UIView {
         
         NSLayoutConstraint.activate([
                   NSLayoutConstraint(item: dayLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 78),
-//                  NSLayoutConstraint(item: dayLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 43),
-//                  NSLayoutConstraint(item: dayLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 43),
                   dayLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                   dayLabel.widthAnchor.constraint(equalToConstant: self.frame.size.width - 86),
                   dayLabel.heightAnchor.constraint(equalToConstant: 37),
                   
-//                  NSLayoutConstraint(item: weatherIcon, attribute: .top, relatedBy: .equal, toItem: dayLabel, attribute: .bottom, multiplier: 1.0, constant: 29),
-//                  weatherIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//                  weatherIcon.heightAnchor.constraint(equalToConstant: 125),
-//                  weatherIcon.widthAnchor.constraint(equalToConstant: 125),
+                  NSLayoutConstraint(item: weatherIcon, attribute: .top, relatedBy: .equal, toItem: dayLabel, attribute: .bottom, multiplier: 1.0, constant: 29),
+                  weatherIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                  weatherIcon.heightAnchor.constraint(equalToConstant: 125),
+                  weatherIcon.widthAnchor.constraint(equalToConstant: 125),
 //                  
 //                  NSLayoutConstraint(item: precipChanceIcon, attribute: .top, relatedBy: .equal, toItem: weatherIcon, attribute: .bottom, multiplier: 1.0, constant: 54),
 //                  NSLayoutConstraint(item: precipChanceIcon, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
