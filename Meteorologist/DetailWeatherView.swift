@@ -72,6 +72,12 @@ class DetailWeatherView: UIView {
         return label
     }()
     
+    lazy var minTempIcon: UILabel = {
+        let label = UILabel()
+        WeatherIcon.set(label, textTo: .down, with: 20)
+        return label
+    }()
+    
     lazy var humidityLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
