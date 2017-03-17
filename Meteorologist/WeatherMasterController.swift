@@ -28,6 +28,7 @@ class WeatherMasterController: UIViewController {
             self.dailyWeatherView.reloadData(from: current)
             self.daily = daily
             self.dailyWeatherTable.dataSource = self
+            self.dailyWeatherTable.delegate = self
         }
         
         dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200)
@@ -77,7 +78,9 @@ extension WeatherMasterController: UITableViewDataSource {
 
 extension WeatherMasterController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Cell at postion \(indexPath.row) was tapped")
         if let cell = tableView.cellForRow(at: indexPath) {
+            print("The cell exists")
             let detailController = WeatherDetailController(with: daily[indexPath.row])
             detailController.weatherView.dayLabel.text = (cell as? DailyWeatherCell)?.dateLabel.text ?? "N/A"
             self.show(detailController, sender: self)
