@@ -89,6 +89,12 @@ class DetailWeatherView: UIView {
         return label
     }()
     
+    lazy var humidityIcon: UILabel = {
+        let label = UILabel()
+        WeatherIcon.set(label, textTo: .humidity, with: 20)
+        return label
+    }()
+    
     lazy var windSpeedLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
@@ -97,6 +103,12 @@ class DetailWeatherView: UIView {
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         // FIXME: - Remove placholder
         label.text = "100mph"
+        return label
+    }()
+    
+    lazy var windSpeedIcon: UILabel = {
+        let label = UILabel()
+        WeatherIcon.set(label, textTo: .wind, with: 20)
         return label
     }()
 }
