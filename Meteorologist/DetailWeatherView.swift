@@ -139,6 +139,15 @@ class DetailWeatherView: UIView {
         }
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureLayout()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func reloadData(with weather: DailyWeather) {
         DispatchQueue.main.async {
             if let max = weather.maxTemp { self.maxTempLabel.text = "\(Float(roundf(max*10)/10))º" } else { self.maxTempLabel.text = "N/A" }
