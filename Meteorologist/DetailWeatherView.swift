@@ -122,4 +122,10 @@ class DetailWeatherView: UIView {
         label.text = "Really super long two line summary that needs a tall label. There, that should be enough text."
         return label
     }()
+    
+    lazy var attributionImage: UIImage = {
+        if let image = UIImage(named: "poweredby-online") {
+            return image
+        } else { fatalError("Image does not exist") }
+    }()
 }
