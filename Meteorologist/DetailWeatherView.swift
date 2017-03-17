@@ -70,4 +70,15 @@ class DetailWeatherView: UIView {
         label.text = "100%"
         return label
     }()
+    
+    lazy var windSpeedLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .clear
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        // FIXME: - Remove placholder
+        label.text = "100mph"
+        return label
+    }()
 }
