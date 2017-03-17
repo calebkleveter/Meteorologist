@@ -13,15 +13,7 @@ extension Date {
         let date = Date()
         let dateFomatter = DateFormatter()
         dateFomatter.dateFormat = "MMM d"
-        var formattedDate = ""
-        var loopCounter = 0
-        let formattedDateChars = dateFomatter.string(from: date).characters
-        for char in dateFomatter.string(from: date).characters {
-            if loopCounter == formattedDateChars.count - 1 {
-                formattedDate += String(Int(String(char))! + advance)
-            } else { formattedDate += String(char) }
-            loopCounter += 1
-        }
+        let formattedDate = dateFomatter.string(from: date.addingTimeInterval(TimeInterval(60 * 60 * 24 * advance)))
         return formattedDate
     }
 }
