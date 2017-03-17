@@ -38,6 +38,12 @@ class DetailWeatherView: UIView {
         return label
     }()
     
+    lazy var precipChanceIcon: UILabel = {
+        let label = UILabel()
+        WeatherIcon.set(label, textTo: .precipitation, with: 20)
+        return label
+    }()
+    
     lazy var maxTempLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
