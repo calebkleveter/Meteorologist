@@ -183,8 +183,8 @@ class DetailWeatherView: UIView {
 //        self.addSubview(windSpeedLabel)
 //        self.addSubview(windSpeedIcon)
 //        self.addSubview(summaryLabel)
-//        self.addSubview(attributionImageView)
-//        attributionImageView.addGestureRecognizer(attributionSelectGesture)
+        self.addSubview(attributionImageView)
+        attributionImageView.addGestureRecognizer(attributionSelectGesture)
         
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         weatherIcon.translatesAutoresizingMaskIntoConstraints = false
@@ -199,7 +199,7 @@ class DetailWeatherView: UIView {
 //        windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
 //        windSpeedIcon.translatesAutoresizingMaskIntoConstraints = false
 //        summaryLabel.translatesAutoresizingMaskIntoConstraints = false
-//        attributionImageView.translatesAutoresizingMaskIntoConstraints = false
+        attributionImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                   NSLayoutConstraint(item: dayLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 78),
@@ -211,7 +211,7 @@ class DetailWeatherView: UIView {
                   weatherIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                   weatherIcon.heightAnchor.constraint(equalToConstant: 125),
                   weatherIcon.widthAnchor.constraint(equalToConstant: 125),
-//                  
+                  
 //                  NSLayoutConstraint(item: precipChanceIcon, attribute: .top, relatedBy: .equal, toItem: weatherIcon, attribute: .bottom, multiplier: 1.0, constant: 54),
 //                  NSLayoutConstraint(item: precipChanceIcon, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
 //                  precipChanceIcon.widthAnchor.constraint(equalToConstant: smallLabelWidths),
@@ -267,10 +267,10 @@ class DetailWeatherView: UIView {
 //                  NSLayoutConstraint(item: summaryLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 20),
 //                  summaryLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 //                  
-//                  NSLayoutConstraint(item: attributionImageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
-//                  NSLayoutConstraint(item: attributionImageView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
-//                  NSLayoutConstraint(item: attributionImageView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
-//                  attributionImageView.heightAnchor.constraint(equalToConstant: self.frame.size.width * 0.22)
+                  NSLayoutConstraint(item: attributionImageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
+                  NSLayoutConstraint(item: attributionImageView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
+                  NSLayoutConstraint(item: attributionImageView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
+                  attributionImageView.heightAnchor.constraint(equalToConstant: self.frame.size.width * 0.22)
             ])
     }
 }
