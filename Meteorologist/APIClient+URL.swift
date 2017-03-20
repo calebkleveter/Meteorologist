@@ -8,3 +8,10 @@
 
 import Foundation
 import CoreLocation
+
+func constructAPIURL(from location: CLLocation) -> String {
+    let baseURL = "https://api.darksky.net/forecast/"
+    let latitude = location.coordinate.latitude
+    let longtitude = location.coordinate.longitude
+    return "\(baseURL)\(API_KEY)/\(latitude),\(longtitude)"
+}

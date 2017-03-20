@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherMasterController: UIViewController {
 
@@ -15,6 +16,7 @@ class WeatherMasterController: UIViewController {
     let dailyWeatherView = WeatherTableView()
     let dailyWeatherTable = DailyWeatherTable()
     let locationManager = LocationManager()
+    var currentLocation = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +25,14 @@ class WeatherMasterController: UIViewController {
         
         locationManager.getUserPermission()
         locationManager.onLocationUpdate = { location in
-            latitude = location.coordinate.latitude
-            longtitude = location.coordinate.longitude
+            self.currentLocation = location
         }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        weatherFetch.getJSON(from: "\(baseURL)\(API_KEY)/\(latitude),\(longtitude)") { (current, daily) in
+        weatherFetch.getJSON(from: constructAPIURL(from: currentLocation)) { (current, daily) in
             self.dailyWeatherView.reloadData(from: current)
             self.daily = daily
             self.dailyWeatherTable.dataSource = self

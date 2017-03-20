@@ -8,10 +8,6 @@
 
 import Foundation
 
-let baseURL = "https://api.darksky.net/forecast/"
-var latitude = 0.0
-var longtitude = 0.0
-
 public let CKNetworkingErrorDomain = "com.caleb-kleveter.Meteorologist.NetworkingError"
 public let MissingHTTPResponseError: Int = 0
 
