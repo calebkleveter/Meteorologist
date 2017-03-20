@@ -11,4 +11,10 @@ import CoreLocation
 
 class LocationManager {
     let locationManager = CLLocationManager()
+    
+    func getUserPermission() {
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
 }
