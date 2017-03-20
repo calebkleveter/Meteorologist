@@ -24,6 +24,12 @@ class WeatherDetailController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.tintColor = .gray
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         weatherView = DetailWeatherView(frame: self.view.frame)
