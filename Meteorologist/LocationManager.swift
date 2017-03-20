@@ -24,6 +24,20 @@ class LocationManager: NSObject {
             locationManager.requestAlwaysAuthorization()
         }
     }
+    
+    func getLocationName(from location: CLLocation, with placemarkString: String, endingWith completion: @escaping (String) -> ()) {
+        let coder = CLGeocoder()
+        
+        coder.reverseGeocodeLocation(location) { (placemarks, error) in
+            guard let placemarks = placemarks else { completion("N/A"); return }
+            if let placemark = placemarks.first {
+                if let locationName = (placemark.addressDictionary as? [String: AnyObject])?[placemarkString] as? String {
+                    completion(locationName)
+                    return
+                } else { completion("N/A"); return }
+            } else { completion("N/A"); return }
+        }
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
