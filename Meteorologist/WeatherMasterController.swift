@@ -14,17 +14,24 @@ class WeatherMasterController: UIViewController {
     var daily: [DailyWeather] = []
     let dailyWeatherView = WeatherTableView()
     let dailyWeatherTable = DailyWeatherTable()
+    let locationManager = LocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view = GradientView(frame: self.view.frame)
+        
+        locationManager.getUserPermission()
+        locationManager.onLocationUpdate = { location in
+            latitude = location.coordinate.latitude
+            longtitude = location.coordinate.longitude
+        }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        weatherFetch.getJSON(from: "https://api.darksky.net/forecast/e49cd06c8aaa9bd242728c21a1058b5f/37.8267,-122.4233") { (current, daily) in
+        weatherFetch.getJSON(from: "\(baseURL)\(API_KEY)/\(latitude),\(longtitude)") { (current, daily) in
             self.dailyWeatherView.reloadData(from: current)
             self.daily = daily
             self.dailyWeatherTable.dataSource = self
@@ -81,6 +88,7 @@ extension WeatherMasterController: UITableViewDelegate {
         if let cell = tableView.cellForRow(at: indexPath) {
             let detailController = WeatherDetailController(with: daily[indexPath.row], day: (cell as? DailyWeatherCell)?.dateLabel.text ?? "N/A")
             self.show(detailController, sender: self)
+            tableView.deselectRow(at: indexPath, animated: false)
         }
     }
 }
