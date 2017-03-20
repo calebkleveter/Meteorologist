@@ -177,7 +177,7 @@ class DetailWeatherView: UIView {
         
         self.addSubview(dayLabel)
         self.addSubview(weatherIcon)
-//        self.addSubview(precipChanceLabel)
+        self.addSubview(precipChanceLabel)
         self.addSubview(precipChanceIcon)
 //        self.addSubview(maxTempLabel)
         self.addSubview(maxTempIcon)
@@ -193,7 +193,7 @@ class DetailWeatherView: UIView {
         
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         weatherIcon.translatesAutoresizingMaskIntoConstraints = false
-//        precipChanceLabel.translatesAutoresizingMaskIntoConstraints = false
+        precipChanceLabel.translatesAutoresizingMaskIntoConstraints = false
         precipChanceIcon.translatesAutoresizingMaskIntoConstraints = false
 //        maxTempLabel.translatesAutoresizingMaskIntoConstraints = false
         maxTempIcon.translatesAutoresizingMaskIntoConstraints = false
@@ -241,12 +241,12 @@ class DetailWeatherView: UIView {
                   NSLayoutConstraint(item: minTempIcon, attribute: .left, relatedBy: .equal, toItem: maxTempIcon, attribute: .right, multiplier: 1.0, constant: 0),
                   minTempIcon.widthAnchor.constraint(equalToConstant: smallLabelWidths),
                   minTempIcon.heightAnchor.constraint(equalToConstant: 32),
-//                  
-//                  NSLayoutConstraint(item: precipChanceLabel, attribute: .top, relatedBy: .equal, toItem: precipChanceIcon, attribute: .bottom, multiplier: 1.0, constant: 0),
-//                  NSLayoutConstraint(item: precipChanceLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
-//                  precipChanceLabel.widthAnchor.constraint(equalToConstant: smallLabelWidths),
-//                  precipChanceLabel.heightAnchor.constraint(equalToConstant: 32),
-//                  
+                  
+                  NSLayoutConstraint(item: precipChanceLabel, attribute: .top, relatedBy: .equal, toItem: precipChanceIcon, attribute: .bottom, multiplier: 1.0, constant: 0),
+                  NSLayoutConstraint(item: precipChanceLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
+                  precipChanceLabel.widthAnchor.constraint(equalToConstant: smallLabelWidths),
+                  precipChanceLabel.heightAnchor.constraint(equalToConstant: 32),
+//
 //                  NSLayoutConstraint(item: humidityLabel, attribute: .top, relatedBy: .equal, toItem: humidityIcon, attribute: .bottom, multiplier: 1.0, constant: 0),
 //                  NSLayoutConstraint(item: humidityLabel, attribute: .left, relatedBy: .equal, toItem: precipChanceLabel, attribute: .left, multiplier: 1.0, constant: 0),
 //                  humidityLabel.widthAnchor.constraint(equalToConstant: smallLabelWidths),
