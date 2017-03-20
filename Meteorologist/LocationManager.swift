@@ -10,5 +10,5 @@ import Foundation
 import CoreLocation
 
 class LocationManager {
-    let locationManager: CLLocationManager()
+    let locationManager = CLLocationManager()
 }
