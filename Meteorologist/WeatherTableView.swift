@@ -137,7 +137,7 @@ class WeatherTableView: UIView {
             if let min = weather.minTemp { self.tempLowLabel.text = "\(Float(roundf(min*10)/10))º" } else { self.tempLowLabel.text = "N/A" }
             if let precip = weather.precipChance { self.precipChanceLabel.text = "\(Float(roundf(precip*1000)/10))%" } else { self.precipChanceLabel.text = "N/A" }
             if let humidity = weather.humidity { self.humidityLabel.text = "\(Float(roundf(humidity*1000)/10))%" } else { self.humidityLabel.text = "N/A" }
-            if let windSpeed = weather.windSpeed { self.windSpeedLabel.text = "\(Int(roundf(windSpeed*100)/10))mph" } else { self.windSpeedLabel.text = "N/A" }
+            if let windSpeed = weather.windSpeed { self.windSpeedLabel.text = "\(Int(roundf(windSpeed*10)/10))mph" } else { self.windSpeedLabel.text = "N/A" }
             if let currentTemp = weather.currentTemp { self.currentTempLabel.text = "\(Float(roundf(currentTemp*10)/10))º" } else { self.currentTempLabel.text = "N/A" }
             WeatherIcon.set(self.currentWeatherIcon, textTo: weather.icon, with: 71)
             self.summaryLabel.text = weather.summary
