@@ -9,4 +9,6 @@
 import Foundation
 import CoreLocation
 
-class LocationManager {}
+class LocationManager {
+    let locationManager: CLLocationManager()
+}
