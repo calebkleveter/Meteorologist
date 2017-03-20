@@ -9,12 +9,21 @@
 import Foundation
 import CoreLocation
 
-class LocationManager {
+class LocationManager: NSObject {
     let locationManager = CLLocationManager()
     
+    override init() {
+        super.init()
+        self.locationManager.delegate = self
+    }
+    
     func getUserPermission() {
-        if CLLocationManager.authorizationStatus() == .notDetermined {
+        if CLLocationManager.authorizationStatus() == .notDetermined || CLLocationManager.authorizationStatus() == .denied {
             locationManager.requestAlwaysAuthorization()
         }
     }
+}
+
+extension LocationManager: CLLocationManagerDelegate {
+    
 }
