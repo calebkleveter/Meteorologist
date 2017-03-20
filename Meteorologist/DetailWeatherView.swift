@@ -181,7 +181,7 @@ class DetailWeatherView: UIView {
         self.addSubview(precipChanceIcon)
         self.addSubview(maxTempLabel)
         self.addSubview(maxTempIcon)
-//        self.addSubview(minTempLabel)
+        self.addSubview(minTempLabel)
         self.addSubview(minTempIcon)
         self.addSubview(humidityLabel)
         self.addSubview(humidityIcon)
@@ -197,7 +197,7 @@ class DetailWeatherView: UIView {
         precipChanceIcon.translatesAutoresizingMaskIntoConstraints = false
         maxTempLabel.translatesAutoresizingMaskIntoConstraints = false
         maxTempIcon.translatesAutoresizingMaskIntoConstraints = false
-//        minTempLabel.translatesAutoresizingMaskIntoConstraints = false
+        minTempLabel.translatesAutoresizingMaskIntoConstraints = false
         minTempIcon.translatesAutoresizingMaskIntoConstraints = false
         humidityLabel.translatesAutoresizingMaskIntoConstraints = false
         humidityIcon.translatesAutoresizingMaskIntoConstraints = false
@@ -261,12 +261,12 @@ class DetailWeatherView: UIView {
                   NSLayoutConstraint(item: maxTempLabel, attribute: .left, relatedBy: .equal, toItem: windSpeedLabel, attribute: .right, multiplier: 1.0, constant: 0),
                   maxTempLabel.widthAnchor.constraint(equalToConstant: smallLabelWidths),
                   maxTempLabel.heightAnchor.constraint(equalToConstant: 32),
+
+                  NSLayoutConstraint(item: minTempLabel, attribute: .top, relatedBy: .equal, toItem: minTempIcon, attribute: .bottom, multiplier: 1.0, constant: 0),
+                  NSLayoutConstraint(item: minTempLabel, attribute: .left, relatedBy: .equal, toItem: maxTempLabel, attribute: .right, multiplier: 1.0, constant: 0),
+                  minTempLabel.widthAnchor.constraint(equalToConstant: smallLabelWidths),
+                  minTempLabel.heightAnchor.constraint(equalToConstant: 32),
 //
-//                  NSLayoutConstraint(item: minTempIcon, attribute: .top, relatedBy: .equal, toItem: minTempIcon, attribute: .bottom, multiplier: 1.0, constant: 0),
-//                  NSLayoutConstraint(item: minTempIcon, attribute: .left, relatedBy: .equal, toItem: maxTempLabel, attribute: .left, multiplier: 1.0, constant: 0),
-//                  minTempIcon.widthAnchor.constraint(equalToConstant: smallLabelWidths),
-//                  minTempIcon.heightAnchor.constraint(equalToConstant: 32),
-//                  
 //                  NSLayoutConstraint(item: summaryLabel, attribute: .top, relatedBy: .equal, toItem: minTempLabel, attribute: .bottom, multiplier: 1.0, constant: 50),
 //                  NSLayoutConstraint(item: summaryLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
 //                  NSLayoutConstraint(item: summaryLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 20),
