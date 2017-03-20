@@ -11,10 +11,12 @@ import UIKit
 class WeatherDetailController: UIViewController {
 
     let weatherData: DailyWeather
+    let detailDay: String
     var weatherView: DetailWeatherView?
     
-    init(with weatherData: DailyWeather) {
+    init(with weatherData: DailyWeather, day: String) {
         self.weatherData = weatherData
+        self.detailDay = day
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,6 +28,7 @@ class WeatherDetailController: UIViewController {
         super.viewDidLayoutSubviews()
         weatherView = DetailWeatherView(frame: self.view.frame)
         weatherView?.reloadData(with: weatherData)
+        weatherView?.dayLabel.text = detailDay
         guard let view = weatherView else { fatalError("Init did not work") }
         self.view.addSubview(view)
     }
