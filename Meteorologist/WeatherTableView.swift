@@ -122,6 +122,16 @@ class WeatherTableView: UIView {
         return label
     }()
     
+    lazy var changeLocationButton: UIButton = {
+        let button = UIButton(type: UIButtonType.system)
+        button.backgroundColor = .clear
+        button.tintColor = .white
+        button.setImage(UIImage(named: "ios-location"), for: UIControlState.normal)
+        button.isUserInteractionEnabled = true
+        button.addTarget(self, action: #selector(WeatherTableView.locationButtonSelected), for: .touchUpInside)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
@@ -129,6 +139,10 @@ class WeatherTableView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func locationButtonSelected(_ sender: AnyObject?) {
+        print("Selected")
     }
     
     func reloadData(from weather: CurrentWeather) {
@@ -158,6 +172,7 @@ class WeatherTableView: UIView {
         self.addSubview(windSpeedLabel)
         self.addSubview(windSpeedIcon)
         self.addSubview(currentTempLabel)
+        self.addSubview(changeLocationButton)
         
         tempHighIcon.translatesAutoresizingMaskIntoConstraints = false
         tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -172,6 +187,7 @@ class WeatherTableView: UIView {
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedIcon.translatesAutoresizingMaskIntoConstraints = false
         currentTempLabel.translatesAutoresizingMaskIntoConstraints = false
+        changeLocationButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tempHighIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -237,7 +253,12 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: summaryLabel, attribute: .top, relatedBy: .equal, toItem: currentWeatherIcon, attribute: .bottom, multiplier: 1.0, constant: 25),
                 NSLayoutConstraint(item: summaryLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 30),
                 NSLayoutConstraint(item: summaryLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -30),
-                summaryLabel.heightAnchor.constraint(equalToConstant: 52)
+                summaryLabel.heightAnchor.constraint(equalToConstant: 52),
+                
+                NSLayoutConstraint(item: changeLocationButton, attribute: .top, relatedBy: .equal, toItem: tempLowIcon, attribute: .bottom, multiplier: 1.0, constant: 25),
+                NSLayoutConstraint(item: changeLocationButton, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 15),
+                changeLocationButton.heightAnchor.constraint(equalToConstant: 40),
+                changeLocationButton.widthAnchor.constraint(equalToConstant: 40)
             ])
     }
 }
