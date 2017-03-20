@@ -123,6 +123,7 @@ class DetailWeatherView: UIView {
         label.backgroundColor = .clear
         label.textColor = .white
         label.textAlignment = .center
+        label.numberOfLines = 0
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         // FIXME: - Remove placholder
         label.text = "Really super long two line summary that needs a tall label. There, that should be enough text."
@@ -187,7 +188,7 @@ class DetailWeatherView: UIView {
         self.addSubview(humidityIcon)
         self.addSubview(windSpeedLabel)
         self.addSubview(windSpeedIcon)
-//        self.addSubview(summaryLabel)
+        self.addSubview(summaryLabel)
         self.addSubview(attributionImageView)
         attributionImageView.addGestureRecognizer(attributionSelectGesture)
         
@@ -203,7 +204,7 @@ class DetailWeatherView: UIView {
         humidityIcon.translatesAutoresizingMaskIntoConstraints = false
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedIcon.translatesAutoresizingMaskIntoConstraints = false
-//        summaryLabel.translatesAutoresizingMaskIntoConstraints = false
+        summaryLabel.translatesAutoresizingMaskIntoConstraints = false
         attributionImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -266,12 +267,12 @@ class DetailWeatherView: UIView {
                   NSLayoutConstraint(item: minTempLabel, attribute: .left, relatedBy: .equal, toItem: maxTempLabel, attribute: .right, multiplier: 1.0, constant: 0),
                   minTempLabel.widthAnchor.constraint(equalToConstant: smallLabelWidths),
                   minTempLabel.heightAnchor.constraint(equalToConstant: 32),
-//
-//                  NSLayoutConstraint(item: summaryLabel, attribute: .top, relatedBy: .equal, toItem: minTempLabel, attribute: .bottom, multiplier: 1.0, constant: 50),
-//                  NSLayoutConstraint(item: summaryLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
-//                  NSLayoutConstraint(item: summaryLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 20),
-//                  summaryLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//                  
+
+                  NSLayoutConstraint(item: summaryLabel, attribute: .top, relatedBy: .equal, toItem: minTempLabel, attribute: .bottom, multiplier: 1.0, constant: 50),
+                  NSLayoutConstraint(item: summaryLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
+                  NSLayoutConstraint(item: summaryLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -20),
+                  summaryLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                  
                   NSLayoutConstraint(item: attributionImageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
                   NSLayoutConstraint(item: attributionImageView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
                   NSLayoutConstraint(item: attributionImageView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
