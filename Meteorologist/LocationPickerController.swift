@@ -12,6 +12,7 @@ import MapKit
 class LocationPickerController: UIViewController {
 
     var pickerView: LocationPickerView? = nil
+    var newLocation: CLLocationCoordinate2D?
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -26,6 +27,7 @@ class LocationPickerController: UIViewController {
         pickerView = LocationPickerView(frame: self.view.frame)
         self.view.addSubview(pickerView!)
         self.pickerView?.mapView.delegate = self
+        self.pickerView?.searchBar.delegate = self
     }
 
     override func viewDidLayoutSubviews() {
@@ -42,5 +44,35 @@ extension LocationPickerController: MKMapViewDelegate {
         mapRegion.span.longitudeDelta = 0.25
         
         mapView.setRegion(mapRegion, animated: true)
+    }
+}
+
+extension LocationPickerController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchRequest = MKLocalSearchRequest()
+        searchRequest.naturalLanguageQuery = searchBar.text
+        
+        let search = MKLocalSearch(request: searchRequest)
+        search.start { (response, error) in
+            guard let response = response, let pickerView = self.pickerView else { print("Bad Location"); return }
+            
+            if pickerView.mapView.annotations.count > 0 {
+                pickerView.mapView.removeAnnotations(pickerView.mapView.annotations)
+            }
+            
+            self.newLocation = response.boundingRegion.center
+            
+            var mapRegion = MKCoordinateRegion()
+            mapRegion.center = response.boundingRegion.center
+            mapRegion.span.latitudeDelta = 0.25
+            mapRegion.span.longitudeDelta = 0.25
+            
+            let locationAnnotation = MKPointAnnotation()
+            locationAnnotation.title = searchBar.text
+            locationAnnotation.coordinate = response.boundingRegion.center
+            
+            pickerView.mapView.addAnnotation(locationAnnotation)
+            pickerView.mapView.setRegion(mapRegion, animated: true)
+        }
     }
 }
