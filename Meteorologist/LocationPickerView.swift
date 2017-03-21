@@ -28,16 +28,9 @@ class LocationPickerView: UIView {
         return UISearchBar()
     }()
     
-    lazy var locationSearchResultsTable: UITableView = {
-        let tableView = UITableView()
-        tableView.allowsMultipleSelection = false
-        tableView.allowsSelection = true
-        return tableView
-    }()
-    
     lazy var selectLocationButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
-        button.backgroundColor = UIColor(red: 18/255, green: 7/255, blue: 161/255, alpha: 1)
+        button.backgroundColor = .clear
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         button.setTitle("Use Selected Location", for: .normal)
@@ -48,7 +41,7 @@ class LocationPickerView: UIView {
     
     lazy var useCurrentLocationButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
-        button.backgroundColor = UIColor(red: 18/255, green: 7/255, blue: 161/255, alpha: 1)
+        button.backgroundColor = .clear
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         button.setTitle("Use Current Location", for: .normal)
@@ -59,6 +52,7 @@ class LocationPickerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.addSubview(GradientView(frame: frame))
         configureLayout()
     }
     
@@ -79,11 +73,9 @@ class LocationPickerView: UIView {
         self.addSubview(useCurrentLocationButton)
         self.addSubview(selectLocationButton)
         self.addSubview(searchBar)
-        self.addSubview(locationSearchResultsTable)
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        locationSearchResultsTable.translatesAutoresizingMaskIntoConstraints = false
         selectLocationButton.translatesAutoresizingMaskIntoConstraints = false
         useCurrentLocationButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -91,25 +83,20 @@ class LocationPickerView: UIView {
                 NSLayoutConstraint(item: mapView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: mapView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: mapView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0),
-                mapView.heightAnchor.constraint(equalToConstant: 200),
+                mapView.heightAnchor.constraint(equalToConstant: 300),
                 
                 NSLayoutConstraint(item: searchBar, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: searchBar, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: searchBar, attribute: .top, relatedBy: .equal, toItem: mapView, attribute: .bottom, multiplier: 1.0, constant: 0),
-                
-                NSLayoutConstraint(item: locationSearchResultsTable, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
-                NSLayoutConstraint(item: locationSearchResultsTable, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
-                NSLayoutConstraint(item: locationSearchResultsTable, attribute: .top, relatedBy: .equal, toItem: searchBar, attribute: .bottom, multiplier: 1.0, constant: 0),
-                locationSearchResultsTable.heightAnchor.constraint(equalToConstant: self.frame.size.height - 200 - searchBar.frame.size.height - 140),
-                
+            
                 NSLayoutConstraint(item: selectLocationButton, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
-                NSLayoutConstraint(item: selectLocationButton, attribute: .top, relatedBy: .equal, toItem: locationSearchResultsTable, attribute: .bottom, multiplier: 1.0, constant: 0),
-                NSLayoutConstraint(item: selectLocationButton, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
+                NSLayoutConstraint(item: selectLocationButton, attribute: .top, relatedBy: .equal, toItem: searchBar, attribute: .bottom, multiplier: 1.0, constant: 0),
+                selectLocationButton.heightAnchor.constraint(equalToConstant: 100),
                 selectLocationButton.widthAnchor.constraint(equalToConstant: (self.frame.size.width / 2) - 0.5),
                 
                 NSLayoutConstraint(item: useCurrentLocationButton, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
-                NSLayoutConstraint(item: useCurrentLocationButton, attribute: .top, relatedBy: .equal, toItem: locationSearchResultsTable, attribute: .bottom, multiplier: 1.0, constant: 0),
-                NSLayoutConstraint(item: useCurrentLocationButton, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
+                NSLayoutConstraint(item: useCurrentLocationButton, attribute: .top, relatedBy: .equal, toItem: searchBar, attribute: .bottom, multiplier: 1.0, constant: 0),
+                useCurrentLocationButton.heightAnchor.constraint(equalToConstant: 100),
                 useCurrentLocationButton.widthAnchor.constraint(equalToConstant: (self.frame.size.width / 2) - 0.5),
             ])
     }
