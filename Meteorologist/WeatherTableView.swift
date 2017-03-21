@@ -27,8 +27,6 @@ class WeatherTableView: UIView {
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         label.textColor = .white
         label.backgroundColor = .clear
-        // FIXME: - This is a placeholder
-        label.text = "100º"
         return label
     }()
     
@@ -43,8 +41,6 @@ class WeatherTableView: UIView {
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         label.textColor = .white
         label.backgroundColor = .clear
-        // FIXME: - This is a placeholder
-        label.text = "100º"
         return label
     }()
     
@@ -53,8 +49,6 @@ class WeatherTableView: UIView {
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         label.textColor = .white
         label.backgroundColor = .clear
-        // FIXME: - This is a placeholder
-        label.text = "100%"
         label.textAlignment = .right
         return label
     }()
@@ -70,8 +64,6 @@ class WeatherTableView: UIView {
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         label.textColor = .white
         label.backgroundColor = .clear
-        // FIXME: - This is a placeholder
-        label.text = "100%"
         label.textAlignment = .right
         return label
     }()
@@ -87,8 +79,6 @@ class WeatherTableView: UIView {
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         label.textColor = .white
         label.backgroundColor = .clear
-        // FIXME: - This is a placeholder
-        label.text = "100mph"
         label.textAlignment = .right
         return label
     }()
@@ -111,8 +101,6 @@ class WeatherTableView: UIView {
         label.font = UIFont(name: "HelveticaNeue-Light", size: 30)
         label.textColor = .white
         label.backgroundColor = .clear
-        // FIXME: - This is a placeholder
-        label.text = "100.0º"
         label.textAlignment = .center
         return label
     }()
@@ -122,8 +110,6 @@ class WeatherTableView: UIView {
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         label.textColor = .white
         label.backgroundColor = .clear
-        // FIXME: - This is a placeholder
-        label.text = "Really long weather summary that goes out of the frame of the iPhone screen."
         label.numberOfLines = 0
         label.textAlignment = NSTextAlignment.center
         return label
