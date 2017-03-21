@@ -11,6 +11,7 @@ import MapKit
 
 protocol LocationPickerContollerDelegate: class {
     func dismissedWith(location: CLLocationCoordinate2D)
+    func dismissedWithCurrentLocation()
 }
 
 class LocationPickerController: UIViewController {
@@ -92,6 +93,7 @@ extension LocationPickerController: LocationPickerViewDelegate {
     }
     
     func useCurrentLocation() {
+        self.delegate?.dismissedWithCurrentLocation()
         self.dismiss(animated: true, completion: nil)
     }
 }
