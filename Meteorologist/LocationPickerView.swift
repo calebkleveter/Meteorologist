@@ -12,7 +12,9 @@ import MapKit
 class LocationPickerView: UIView {
     
     lazy var mapView: MKMapView = {
-        return MKMapView()
+        let map = MKMapView()
+        map.showsUserLocation = true
+        return map
     }()
     
     lazy var searchBar: UISearchBar = {
