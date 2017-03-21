@@ -10,7 +10,7 @@ import UIKit
 
 class LocationPickerController: UIViewController {
 
-    let pickerView: LocationPickerView? = nil
+    var pickerView: LocationPickerView? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +18,11 @@ class LocationPickerController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        pickerView = LocationPickerView(frame: self.view.frame)
+        guard let view = pickerView else { fatalError("View init failed") }
+        self.view = view
     }
 
 }
