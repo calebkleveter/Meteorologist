@@ -116,6 +116,10 @@ extension WeatherMasterController: LocationPickerContollerDelegate {
     func dismissedWith(location: CLLocationCoordinate2D) {
         self.refresh(from: location)
     }
+    
+    func dismissedWithCurrentLocation() {
+        self.refresh(from: currentLocation.coordinate)
+    }
 }
 
 
