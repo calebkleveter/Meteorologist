@@ -22,6 +22,9 @@ class WeatherMasterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.dailyWeatherTable.refreshControl = UIRefreshControl()
+        self.dailyWeatherTable.refreshControl?.addTarget(self, action: #selector(WeatherMasterController.tableRefresh), for: UIControlEvents.allEvents)
+        
         dailyWeatherView.delegate = self
         locationPickerController.delegate = self
         
@@ -65,6 +68,12 @@ class WeatherMasterController: UIViewController {
             }
         }
 
+    }
+    
+    func tableRefresh(_ sender: AnyObject?) {
+        self.locationManager.locationManager.requestLocation()
+        self.refresh(from: currentLocation.coordinate)
+        self.dailyWeatherTable.refreshControl?.endRefreshing()
     }
 }
 
