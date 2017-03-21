@@ -142,7 +142,24 @@ class WeatherTableView: UIView {
     }
     
     func locationButtonSelected(_ sender: AnyObject?) {
-        print("Selected")
+        // Thanks to @mxcl for this code to get the UIViewController! http://stackoverflow.com/questions/1372977/given-a-view-how-do-i-get-its-viewcontroller
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if let viewController = parentResponder as? UIViewController {
+                
+                // Check to see if the UIViewController is a WeatherMasterController.
+                if let controller = viewController as? WeatherMasterController {
+                    controller.locationManager.getLocationName(from: controller.currentLocation, with: "City", endingWith: { (city) in
+                        
+                        let locationAlert = UIAlertController(title: city, message: nil, preferredStyle: .alert)
+                        locationAlert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
+                        controller.present(locationAlert, animated: true, completion: nil)
+                    })
+                }
+
+            }
+        }
     }
     
     func reloadData(from weather: CurrentWeather) {
