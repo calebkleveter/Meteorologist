@@ -15,8 +15,15 @@ class LocationPickerView: UIView {
         return MKMapView()
     }()
     
-    lazy var searchController: UISearchController = {
-        return UISearchController()
+    lazy var searchBar: UISearchBar = {
+        return UISearchBar()
+    }()
+    
+    lazy var locationSearchResultsTable: UITableView = {
+        let tableView = UITableView()
+        tableView.allowsMultipleSelection = false
+        tableView.allowsSelection = true
+        return tableView
     }()
     
     lazy var selectLocationButton: UIButton = {
