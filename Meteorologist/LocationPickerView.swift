@@ -27,4 +27,13 @@ class LocationPickerView: UIView {
         button.isUserInteractionEnabled = true
         return button
     }()
+    
+    lazy var useCurrentLocationButton: UIButton = {
+        let button = UIButton(type: UIButtonType.system)
+        button.backgroundColor = .clear
+        button.tintColor = .white
+        button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        button.isUserInteractionEnabled = true
+        return button
+    }()
 }
