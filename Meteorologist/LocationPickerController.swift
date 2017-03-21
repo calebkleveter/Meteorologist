@@ -31,6 +31,7 @@ class LocationPickerController: UIViewController {
         super.viewDidLoad()
         pickerView = LocationPickerView(frame: self.view.frame)
         self.view.addSubview(pickerView!)
+        self.pickerView?.delegate = self
         self.pickerView?.mapView.delegate = self
         self.pickerView?.searchBar.delegate = self
     }
@@ -81,3 +82,31 @@ extension LocationPickerController: UISearchBarDelegate {
         }
     }
 }
+
+extension LocationPickerController: LocationPickerViewDelegate {
+    func useSelectedLocation() {
+        if let location = newLocation {
+            self.delegate?.dismissedWith(location: location)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func useCurrentLocation() {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
