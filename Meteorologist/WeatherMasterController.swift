@@ -55,6 +55,17 @@ class WeatherMasterController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func refresh(from location: CLLocationCoordinate2D) {
+        let location = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        weatherFetch.getJSON(from: constructAPIURL(from: location)) { (current, daily) in
+            self.dailyWeatherView.reloadData(from: current)
+            self.daily = daily
+            DispatchQueue.main.async {
+                self.dailyWeatherTable.reloadData()
+            }
+        }
+
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -103,14 +114,7 @@ extension WeatherMasterController: WeatherTableViewDelegate {
 
 extension WeatherMasterController: LocationPickerContollerDelegate {
     func dismissedWith(location: CLLocationCoordinate2D) {
-        let location = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        weatherFetch.getJSON(from: constructAPIURL(from: location)) { (current, daily) in
-            self.dailyWeatherView.reloadData(from: current)
-            self.daily = daily
-            DispatchQueue.main.async {
-                self.dailyWeatherTable.reloadData()
-            }
-        }
+        self.refresh(from: location)
     }
 }
 
