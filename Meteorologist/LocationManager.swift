@@ -15,7 +15,7 @@ protocol LocationManagerDelegate: class {
 
 class LocationManager: NSObject {
     let locationManager = CLLocationManager()
-    var onLocationUpdate: ((CLLocation) -> Void)?
+    var delegate: LocationManagerDelegate?
     
     override init() {
         super.init()
@@ -53,9 +53,8 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first,
-            let onLocationUpdate = onLocationUpdate {
-                onLocationUpdate(location)
+        if let location = locations.first {
+            self.delegate?.locationDidUpdate(with: location)
         }
     }
     
