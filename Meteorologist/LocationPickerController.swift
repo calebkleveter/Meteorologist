@@ -9,10 +9,15 @@
 import UIKit
 import MapKit
 
+protocol LocationPickerContollerDelegate: class {
+    func dismissedWith(location: CLLocationCoordinate2D)
+}
+
 class LocationPickerController: UIViewController {
 
     var pickerView: LocationPickerView? = nil
     var newLocation: CLLocationCoordinate2D?
+    var delegate: LocationPickerContollerDelegate?
     
     init() {
         super.init(nibName: nil, bundle: nil)
