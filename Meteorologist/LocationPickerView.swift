@@ -30,7 +30,7 @@ class LocationPickerView: UIView {
     
     lazy var selectLocationButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
-        button.backgroundColor = .clear
+        button.backgroundColor = UIColor(red: 18/255, green: 7/255, blue: 161/255, alpha: 1)
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         button.setTitle("Use Selected Location", for: .normal)
@@ -40,7 +40,7 @@ class LocationPickerView: UIView {
     
     lazy var useCurrentLocationButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
-        button.backgroundColor = .clear
+        button.backgroundColor = UIColor(red: 18/255, green: 7/255, blue: 161/255, alpha: 1)
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         button.setTitle("Use Current Location", for: .normal)
@@ -51,7 +51,6 @@ class LocationPickerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
         configureLayout()
     }
     
@@ -90,12 +89,12 @@ class LocationPickerView: UIView {
                 NSLayoutConstraint(item: selectLocationButton, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: selectLocationButton, attribute: .top, relatedBy: .equal, toItem: locationSearchResultsTable, attribute: .bottom, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: selectLocationButton, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
-                selectLocationButton.widthAnchor.constraint(equalToConstant: self.frame.size.width / 2),
+                selectLocationButton.widthAnchor.constraint(equalToConstant: (self.frame.size.width / 2) - 0.5),
                 
                 NSLayoutConstraint(item: useCurrentLocationButton, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: useCurrentLocationButton, attribute: .top, relatedBy: .equal, toItem: locationSearchResultsTable, attribute: .bottom, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: useCurrentLocationButton, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
-                useCurrentLocationButton.widthAnchor.constraint(equalToConstant: self.frame.size.width / 2),
+                useCurrentLocationButton.widthAnchor.constraint(equalToConstant: (self.frame.size.width / 2) - 0.5),
             ])
     }
 }
