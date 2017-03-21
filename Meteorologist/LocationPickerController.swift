@@ -25,10 +25,22 @@ class LocationPickerController: UIViewController {
         super.viewDidLoad()
         pickerView = LocationPickerView(frame: self.view.frame)
         self.view.addSubview(pickerView!)
+        self.pickerView?.mapView.delegate = self
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
 
+}
+
+extension LocationPickerController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        var mapRegion = MKCoordinateRegion()
+        mapRegion.center = mapView.userLocation.coordinate
+        mapRegion.span.latitudeDelta = 0.25
+        mapRegion.span.longitudeDelta = 0.25
+        
+        mapView.setRegion(mapRegion, animated: true)
+    }
 }
