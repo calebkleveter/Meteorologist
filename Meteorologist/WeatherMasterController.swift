@@ -23,10 +23,8 @@ class WeatherMasterController: UIViewController {
 
         self.view = GradientView(frame: self.view.frame)
         
+        locationManager.delegate = self
         locationManager.getUserPermission()
-        locationManager.onLocationUpdate = { location in
-            self.currentLocation = location
-        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -91,5 +89,11 @@ extension WeatherMasterController: UITableViewDelegate {
             self.show(detailController, sender: self)
             tableView.deselectRow(at: indexPath, animated: false)
         }
+    }
+}
+
+extension WeatherMasterController: LocationManagerDelegate {
+    func locationDidUpdate(with location: CLLocation) {
+        self.currentLocation = location
     }
 }
