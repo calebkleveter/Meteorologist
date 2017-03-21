@@ -50,20 +50,10 @@ class WeatherMasterController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
+// MARK: - UITableViewDataSource
 extension WeatherMasterController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -82,6 +72,7 @@ extension WeatherMasterController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension WeatherMasterController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
@@ -92,8 +83,17 @@ extension WeatherMasterController: UITableViewDelegate {
     }
 }
 
+// MARK: - LocationManagerDelegate
 extension WeatherMasterController: LocationManagerDelegate {
     func locationDidUpdate(with location: CLLocation) {
         self.currentLocation = location
     }
 }
+
+
+
+
+
+
+
+
