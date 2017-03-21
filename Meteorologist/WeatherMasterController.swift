@@ -21,6 +21,8 @@ class WeatherMasterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dailyWeatherView.delegate = self
+        
         self.view = GradientView(frame: self.view.frame)
         
         locationManager.delegate = self
@@ -90,7 +92,13 @@ extension WeatherMasterController: LocationManagerDelegate {
     }
 }
 
-
+// MARK: - WeatherTableViewDelegate
+extension WeatherMasterController: WeatherTableViewDelegate {
+    func locationButtonWasSelected() {
+        let locationPickerController = LocationPickerController()
+        self.present(locationPickerController, animated: true, completion: nil)
+    }
+}
 
 
 
