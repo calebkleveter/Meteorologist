@@ -84,7 +84,7 @@ class LocationPickerView: UIView {
                 NSLayoutConstraint(item: locationSearchResultsTable, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: locationSearchResultsTable, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: locationSearchResultsTable, attribute: .top, relatedBy: .equal, toItem: searchBar, attribute: .bottom, multiplier: 1.0, constant: 0),
-                locationSearchResultsTable.heightAnchor.constraint(equalToConstant: self.frame.size.height - 200 - searchBar.frame.size.height - 40),
+                locationSearchResultsTable.heightAnchor.constraint(equalToConstant: self.frame.size.height - 200 - searchBar.frame.size.height - 140),
                 
                 NSLayoutConstraint(item: selectLocationButton, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: selectLocationButton, attribute: .top, relatedBy: .equal, toItem: locationSearchResultsTable, attribute: .bottom, multiplier: 1.0, constant: 0),
