@@ -28,7 +28,6 @@ class LocationPickerController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        print(view)
     }
 
 }
