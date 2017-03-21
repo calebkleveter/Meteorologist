@@ -16,12 +16,14 @@ class WeatherMasterController: UIViewController {
     let dailyWeatherView = WeatherTableView()
     let dailyWeatherTable = DailyWeatherTable()
     let locationManager = LocationManager()
+    let locationPickerController = LocationPickerController()
     var currentLocation = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         dailyWeatherView.delegate = self
+        locationPickerController.delegate = self
         
         self.view = GradientView(frame: self.view.frame)
         
@@ -95,12 +97,22 @@ extension WeatherMasterController: LocationManagerDelegate {
 // MARK: - WeatherTableViewDelegate
 extension WeatherMasterController: WeatherTableViewDelegate {
     func locationButtonWasSelected() {
-        let locationPickerController = LocationPickerController()
         self.present(locationPickerController, animated: true, completion: nil)
     }
 }
 
-
+extension WeatherMasterController: LocationPickerContollerDelegate {
+    func dismissedWith(location: CLLocationCoordinate2D) {
+        let location = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        weatherFetch.getJSON(from: constructAPIURL(from: location)) { (current, daily) in
+            self.dailyWeatherView.reloadData(from: current)
+            self.daily = daily
+            DispatchQueue.main.async {
+                self.dailyWeatherTable.reloadData()
+            }
+        }
+    }
+}
 
 
 
