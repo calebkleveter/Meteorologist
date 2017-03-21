@@ -16,8 +16,6 @@ class DetailWeatherView: UIView {
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue-Light", size: 30)
-        // FIXME: - Remove placholder
-        label.text = "October 23"
         return label
     }()
     
@@ -34,8 +32,6 @@ class DetailWeatherView: UIView {
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-        // FIXME: - Remove placholder
-        label.text = "100%"
         return label
     }()
     
@@ -52,8 +48,6 @@ class DetailWeatherView: UIView {
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-        // FIXME: - Remove placholder
-        label.text = "100º"
         return label
     }()
     
@@ -70,8 +64,6 @@ class DetailWeatherView: UIView {
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-        // FIXME: - Remove placholder
-        label.text = "100º"
         return label
     }()
     
@@ -88,8 +80,6 @@ class DetailWeatherView: UIView {
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-        // FIXME: - Remove placholder
-        label.text = "100%"
         return label
     }()
     
@@ -106,8 +96,6 @@ class DetailWeatherView: UIView {
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-        // FIXME: - Remove placholder
-        label.text = "100mph"
         return label
     }()
     
@@ -125,8 +113,6 @@ class DetailWeatherView: UIView {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-        // FIXME: - Remove placholder
-        label.text = "Really super long two line summary that needs a tall label. There, that should be enough text."
         return label
     }()
     
