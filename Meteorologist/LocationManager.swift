@@ -25,7 +25,7 @@ class LocationManager: NSObject {
     
     func getUserPermission() {
         if CLLocationManager.authorizationStatus() == .notDetermined || CLLocationManager.authorizationStatus() == .denied {
-            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
         }
     }
     
