@@ -9,4 +9,9 @@
 import UIKit
 import MapKit
 
-class LocationPickerView: UIView {}
+class LocationPickerView: UIView {
+    
+    lazy var mapView: MKMapView = {
+        return MKMapView()
+    }()
+}
