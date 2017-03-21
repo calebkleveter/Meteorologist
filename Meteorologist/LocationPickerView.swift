@@ -24,6 +24,7 @@ class LocationPickerView: UIView {
         button.backgroundColor = .clear
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        button.setTitle("Use Selected Location", for: .normal)
         button.isUserInteractionEnabled = true
         return button
     }()
@@ -33,6 +34,7 @@ class LocationPickerView: UIView {
         button.backgroundColor = .clear
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        button.setTitle("Use Current Location", for: .normal)
         button.isUserInteractionEnabled = true
         return button
     }()
