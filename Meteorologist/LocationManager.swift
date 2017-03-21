@@ -21,6 +21,7 @@ class LocationManager: NSObject {
         super.init()
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        self.locationManager.requestLocation()
     }
     
     func getUserPermission() {
@@ -55,6 +56,7 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             self.delegate?.locationDidUpdate(with: location)
+            print(location)
         }
     }
     
