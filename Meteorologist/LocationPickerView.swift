@@ -42,6 +42,7 @@ class LocationPickerView: UIView {
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         button.setTitle("Use Selected Location", for: .normal)
         button.isUserInteractionEnabled = true
+        button.addTarget(self, action: #selector(LocationPickerView.selectedLocationButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -52,9 +53,9 @@ class LocationPickerView: UIView {
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         button.setTitle("Use Current Location", for: .normal)
         button.isUserInteractionEnabled = true
+        button.addTarget(self, action: #selector(LocationPickerView.currentLocationButtonAction), for: .touchUpInside)
         return button
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,6 +64,14 @@ class LocationPickerView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func selectedLocationButtonAction(_ sender: AnyObject?) {
+        self.delegate?.useSelectedLocation()
+    }
+    
+    func currentLocationButtonAction(_ sender: AnyObject?) {
+        self.delegate?.useCurrentLocation()
     }
     
     func configureLayout() {
