@@ -18,4 +18,13 @@ class LocationPickerView: UIView {
     lazy var searchController: UISearchController = {
         return UISearchController()
     }()
+    
+    lazy var selectLocationButton: UIButton = {
+        let button = UIButton(type: UIButtonType.system)
+        button.backgroundColor = .clear
+        button.tintColor = .white
+        button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        button.isUserInteractionEnabled = true
+        return button
+    }()
 }
