@@ -9,7 +9,14 @@
 import UIKit
 import MapKit
 
+protocol LocationPickerViewDelegate: class {
+    func useCurrentLocation()
+    func useSelectedLocation()
+}
+
 class LocationPickerView: UIView {
+    
+    var delegate: LocationPickerViewDelegate?
     
     lazy var mapView: MKMapView = {
         let map = MKMapView()
