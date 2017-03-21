@@ -9,6 +9,8 @@
 import Foundation
 import CoreLocation
 
+protocol LocationManagerDelegate: class {}
+
 class LocationManager: NSObject {
     let locationManager = CLLocationManager()
     var onLocationUpdate: ((CLLocation) -> Void)?
