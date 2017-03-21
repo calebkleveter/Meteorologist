@@ -14,4 +14,8 @@ class LocationPickerView: UIView {
     lazy var mapView: MKMapView = {
         return MKMapView()
     }()
+    
+    lazy var searchController: UISearchController = {
+        return UISearchController()
+    }()
 }
