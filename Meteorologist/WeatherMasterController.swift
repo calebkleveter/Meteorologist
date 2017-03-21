@@ -22,13 +22,13 @@ class WeatherMasterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view = GradientView(frame: self.view.frame)
+        
         self.dailyWeatherTable.refreshControl = UIRefreshControl()
         self.dailyWeatherTable.refreshControl?.addTarget(self, action: #selector(WeatherMasterController.tableRefresh), for: UIControlEvents.allEvents)
         
         dailyWeatherView.delegate = self
         locationPickerController.delegate = self
-        
-        self.view = GradientView(frame: self.view.frame)
         
         locationManager.delegate = self
         locationManager.getUserPermission()
@@ -121,6 +121,7 @@ extension WeatherMasterController: WeatherTableViewDelegate {
     }
 }
 
+// MARK: - LocationPickerContollerDelegate
 extension WeatherMasterController: LocationPickerContollerDelegate {
     func dismissedWith(location: CLLocationCoordinate2D) {
         self.refresh(from: location)
