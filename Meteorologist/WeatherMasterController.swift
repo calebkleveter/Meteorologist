@@ -110,6 +110,7 @@ extension WeatherMasterController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
             let detailController = WeatherDetailController(with: daily[indexPath.row], day: (cell as? DailyWeatherCell)?.dateLabel.text ?? "N/A")
+            detailController.title = self.title
             self.show(detailController, sender: self)
             tableView.deselectRow(at: indexPath, animated: false)
         }
