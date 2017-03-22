@@ -28,15 +28,16 @@ class WeatherDetailController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = .gray
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+        
         weatherView = DetailWeatherView(frame: self.view.frame)
         weatherView?.reloadData(with: weatherData)
         weatherView?.dayLabel.text = detailDay
         guard let view = weatherView else { fatalError("Init did not work") }
         self.view.addSubview(view)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     override func didReceiveMemoryWarning() {
