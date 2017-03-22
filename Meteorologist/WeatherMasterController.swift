@@ -68,7 +68,6 @@ class WeatherMasterController: UIViewController {
     }
     
     func tableRefresh(_ sender: AnyObject?) {
-        self.locationManager.locationManager.requestLocation()
         self.refresh(from: currentLocation.coordinate)
         self.dailyWeatherTable.refreshControl?.endRefreshing()
     }
@@ -133,6 +132,7 @@ extension WeatherMasterController: WeatherTableViewDelegate {
 // MARK: - LocationPickerContollerDelegate
 extension WeatherMasterController: LocationPickerContollerDelegate {
     func dismissedWith(location: CLLocationCoordinate2D) {
+        currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         self.refresh(from: location)
     }
     
