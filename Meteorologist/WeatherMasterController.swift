@@ -32,6 +32,10 @@ class WeatherMasterController: UIViewController {
         
         locationManager.delegate = self
         locationManager.getUserPermission()
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Overview"
+        self.navigationItem.backBarButtonItem = backButton
     }
     
     override func viewDidLayoutSubviews() {
