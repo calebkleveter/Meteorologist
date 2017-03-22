@@ -62,9 +62,7 @@ class WeatherMasterController: UIViewController {
         weatherFetch.getJSON(from: constructAPIURL(from: location)) { (current, daily) in
             self.dailyWeatherView.reloadData(from: current)
             self.daily = daily
-            DispatchQueue.main.async {
-                self.dailyWeatherTable.reloadData()
-            }
+            self.assignDelegates()
         }
 
     }
@@ -121,6 +119,7 @@ extension WeatherMasterController: UITableViewDelegate {
 extension WeatherMasterController: LocationManagerDelegate {
     func locationDidUpdate(with location: CLLocation) {
         self.currentLocation = location
+        self.refresh(from: location.coordinate)
     }
 }
 
