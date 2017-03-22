@@ -24,13 +24,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Kp3-dx-wN2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meteorologist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v89-5n-gdJ">
+                                <rect key="frame" x="0.0" y="315" width="375" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Q3L-mT-icY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Kp3-dx-wN2" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="3tk-MM-Gc7"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Kp3-dx-wN2" secondAttribute="bottom" id="6fh-ml-6US"/>
+                            <constraint firstAttribute="trailing" secondItem="v89-5n-gdJ" secondAttribute="trailing" id="Dr3-IN-V5m"/>
+                            <constraint firstItem="v89-5n-gdJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="aPH-MB-BGc"/>
                             <constraint firstAttribute="trailing" secondItem="Kp3-dx-wN2" secondAttribute="trailing" id="sbx-YF-8o4"/>
                             <constraint firstItem="Kp3-dx-wN2" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="wcr-bW-uOM"/>
+                            <constraint firstItem="v89-5n-gdJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yAy-i4-U4h"/>
+                            <constraint firstItem="v89-5n-gdJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="zpD-ia-qAr"/>
                         </constraints>
                     </view>
                 </viewController>
