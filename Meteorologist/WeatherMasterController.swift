@@ -79,6 +79,8 @@ class WeatherMasterController: UIViewController {
         if self.dailyWeatherTable.dataSource == nil && self.dailyWeatherTable.delegate == nil {
             self.dailyWeatherTable.dataSource = self
             self.dailyWeatherTable.delegate = self
+        } else {
+            self.dailyWeatherTable.reloadData()
         }
     }
 }
