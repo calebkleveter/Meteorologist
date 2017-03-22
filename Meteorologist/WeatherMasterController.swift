@@ -40,8 +40,7 @@ class WeatherMasterController: UIViewController {
         weatherFetch.getJSON(from: constructAPIURL(from: currentLocation)) { (current, daily) in
             self.dailyWeatherView.reloadData(from: current)
             self.daily = daily
-            self.dailyWeatherTable.dataSource = self
-            self.dailyWeatherTable.delegate = self
+            self.assignDelegates()
         }
         
         dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200)
@@ -74,6 +73,13 @@ class WeatherMasterController: UIViewController {
         self.locationManager.locationManager.requestLocation()
         self.refresh(from: currentLocation.coordinate)
         self.dailyWeatherTable.refreshControl?.endRefreshing()
+    }
+    
+    func assignDelegates() {
+        if self.dailyWeatherTable.dataSource == nil && self.dailyWeatherTable.delegate == nil {
+            self.dailyWeatherTable.dataSource = self
+            self.dailyWeatherTable.delegate = self
+        }
     }
 }
 
