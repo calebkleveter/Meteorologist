@@ -116,17 +116,16 @@ class DetailWeatherView: UIView {
         return label
     }()
     
-    lazy var attributionImageView: UIImageView = {
-        if let image = UIImage(named: "poweredby-oneline") {
-            return UIImageView(image: image)
-        } else { fatalError("Image does not exist") }
+    lazy var attributionButton: UIButton = {
+        let image = UIImage(named: "poweredby-oneline")
+        let button = UIButton()
+        button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(DetailWeatherView.attributionSelector), for: .touchUpInside)
+        return button
+        
     }()
     
-    lazy var attributionSelectGesture: UITapGestureRecognizer = {
-        return UITapGestureRecognizer(target: self.attributionImageView, action: #selector(DetailWeatherView.attributionSelector))
-    }()
-    
-    @objc func attributionSelector() {
+    func attributionSelector(_ sender: AnyObject?) {
         if let url = URL(string: "https://darksky.net/poweredby/") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
@@ -173,8 +172,7 @@ class DetailWeatherView: UIView {
         self.addSubview(windSpeedLabel)
         self.addSubview(windSpeedIcon)
         self.addSubview(summaryLabel)
-        self.addSubview(attributionImageView)
-        attributionImageView.addGestureRecognizer(attributionSelectGesture)
+        self.addSubview(attributionButton)
         
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         weatherIcon.translatesAutoresizingMaskIntoConstraints = false
@@ -189,7 +187,7 @@ class DetailWeatherView: UIView {
         windSpeedLabel.translatesAutoresizingMaskIntoConstraints = false
         windSpeedIcon.translatesAutoresizingMaskIntoConstraints = false
         summaryLabel.translatesAutoresizingMaskIntoConstraints = false
-        attributionImageView.translatesAutoresizingMaskIntoConstraints = false
+        attributionButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
                   NSLayoutConstraint(item: dayLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 78),
@@ -257,10 +255,10 @@ class DetailWeatherView: UIView {
                   NSLayoutConstraint(item: summaryLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -20),
                   summaryLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                   
-                  NSLayoutConstraint(item: attributionImageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
-                  NSLayoutConstraint(item: attributionImageView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
-                  NSLayoutConstraint(item: attributionImageView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
-                  attributionImageView.heightAnchor.constraint(equalToConstant: self.frame.size.width * 0.22)
+                  NSLayoutConstraint(item: attributionButton, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
+                  NSLayoutConstraint(item: attributionButton, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
+                  NSLayoutConstraint(item: attributionButton, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
+                  attributionButton.heightAnchor.constraint(equalToConstant: self.frame.size.width * 0.22)
             ])
     }
 }
