@@ -56,7 +56,6 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             self.delegate?.locationDidUpdate(with: location)
-            print(location)
         }
     }
     
