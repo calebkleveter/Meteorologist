@@ -64,7 +64,9 @@ class WeatherMasterController: UIViewController {
             self.daily = daily
             self.assignDelegates()
         }
-
+        locationManager.getLocationName(from: currentLocation, with: "City") { (name) in
+            self.title = name
+        }
     }
     
     func tableRefresh(_ sender: AnyObject?) {
