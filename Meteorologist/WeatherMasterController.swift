@@ -80,7 +80,9 @@ class WeatherMasterController: UIViewController {
             self.dailyWeatherTable.dataSource = self
             self.dailyWeatherTable.delegate = self
         } else {
-            self.dailyWeatherTable.reloadData()
+            DispatchQueue.main.async {
+                self.dailyWeatherTable.reloadData()
+            }
         }
     }
 }
