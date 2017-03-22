@@ -13,5 +13,7 @@ func constructAPIURL(from location: CLLocation) -> String {
     let baseURL = "https://api.darksky.net/forecast/"
     let latitude = location.coordinate.latitude
     let longtitude = location.coordinate.longitude
-    return "\(baseURL)\(API_KEY)/\(latitude),\(longtitude)"
+    let url = "\(baseURL)\(API_KEY)/\(latitude),\(longtitude)"
+    print(url)
+    return url
 }
