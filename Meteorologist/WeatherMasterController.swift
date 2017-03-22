@@ -137,6 +137,7 @@ extension WeatherMasterController: LocationPickerContollerDelegate {
     }
     
     func dismissedWithCurrentLocation() {
+        locationManager.locationManager.requestLocation()
         self.refresh(from: currentLocation.coordinate)
     }
 }
