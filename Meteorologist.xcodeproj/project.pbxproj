@@ -13,7 +13,6 @@
 		009528C91E806FA4006D4467 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009528C81E806FA4006D4467 /* LocationManager.swift */; };
 		009528CB1E807619006D4467 /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009528CA1E807619006D4467 /* Secure.swift */; };
 		009528CD1E80869D006D4467 /* APIClient+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009528CC1E80869D006D4467 /* APIClient+URL.swift */; };
-		009BB3681E8330C400736A8A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 009BB3671E8330C400736A8A /* README.md */; };
 		00A59D611E6E06DC009B9C39 /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A59D601E6E06DC009B9C39 /* DailyWeatherCell.swift */; };
 		00A59D631E6E087F009B9C39 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A59D621E6E087F009B9C39 /* Date.swift */; };
 		00A59D651E6E10D9009B9C39 /* DailyWeatherTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A59D641E6E10D9009B9C39 /* DailyWeatherTable.swift */; };
@@ -59,7 +58,6 @@
 		009528C81E806FA4006D4467 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		009528CA1E807619006D4467 /* Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secure.swift; sourceTree = "<group>"; };
 		009528CC1E80869D006D4467 /* APIClient+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIClient+URL.swift"; sourceTree = "<group>"; };
-		009BB3671E8330C400736A8A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = MeteorologistUITests/README.md; sourceTree = "<group>"; };
 		00A59D601E6E06DC009B9C39 /* DailyWeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
 		00A59D621E6E087F009B9C39 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		00A59D641E6E10D9009B9C39 /* DailyWeatherTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherTable.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 		00B9A70A1E5267C900D675AB = {
 			isa = PBXGroup;
 			children = (
-				009BB3671E8330C400736A8A /* README.md */,
 				00B9A7151E5267C900D675AB /* Meteorologist */,
 				00B9A72A1E5267C900D675AB /* MeteorologistTests */,
 				00B9A7351E5267C900D675AB /* MeteorologistUITests */,
@@ -369,7 +366,6 @@
 				00BA6B0B1E68C5A00088151D /* GradientView.swift in Sources */,
 				00B9A7171E5267C900D675AB /* AppDelegate.swift in Sources */,
 				00A7F3791E816717008B1077 /* LocationPickerView.swift in Sources */,
-				009BB3681E8330C400736A8A /* README.md in Sources */,
 				009528CB1E807619006D4467 /* Secure.swift in Sources */,
 				009528C91E806FA4006D4467 /* LocationManager.swift in Sources */,
 				00B9A7451E52694B00D675AB /* APIClient.swift in Sources */,
