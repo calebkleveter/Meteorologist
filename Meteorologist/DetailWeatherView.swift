@@ -148,8 +148,8 @@ class DetailWeatherView: UIView {
     func reloadData(with weather: DailyWeather) {
         if let max = weather.maxTemp { self.maxTempLabel.text = "\(Float(roundf(max*10)/10))º" } else { self.maxTempLabel.text = "N/A" }
         if let min = weather.minTemp { self.minTempLabel.text = "\(Float(roundf(min*10)/10))º" } else { self.minTempLabel.text = "N/A" }
-        if let precip = weather.precipChance { self.precipChanceLabel.text = "\(Float(roundf(precip*1000)/10))%" } else { self.precipChanceLabel.text = "N/A" }
-        if let humidity = weather.humidity { self.humidityLabel.text = "\(Float(roundf(humidity*1000)/10))%" } else { self.humidityLabel.text = "N/A" }
+        if let precip = weather.precipChance { self.precipChanceLabel.text = "\(Int(roundf(precip*1000)/10))%" } else { self.precipChanceLabel.text = "N/A" }
+        if let humidity = weather.humidity { self.humidityLabel.text = "\(Int(roundf(humidity*1000)/10))%" } else { self.humidityLabel.text = "N/A" }
         if let windSpeed = weather.windSpeed { self.windSpeedLabel.text = "\(Int(roundf(windSpeed*10)/10))mph" } else { self.windSpeedLabel.text = "N/A" }
         WeatherIcon.set(self.weatherIcon, textTo: weather.icon, with: 76)
         self.summaryLabel.text = weather.summary
@@ -157,7 +157,7 @@ class DetailWeatherView: UIView {
     
     func configureLayout() {
         
-        let smallLabelWidths = (self.frame.size.width - 40) / 5
+        let smallLabelWidths = (self.frame.size.width) / 5
         
         self.addSubview(dayLabel)
         self.addSubview(weatherIcon)
@@ -201,7 +201,7 @@ class DetailWeatherView: UIView {
                   weatherIcon.widthAnchor.constraint(equalToConstant: 125),
                   
                   NSLayoutConstraint(item: precipChanceIcon, attribute: .top, relatedBy: .equal, toItem: weatherIcon, attribute: .bottom, multiplier: 1.0, constant: 54),
-                  NSLayoutConstraint(item: precipChanceIcon, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
+                  NSLayoutConstraint(item: precipChanceIcon, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
                   precipChanceIcon.widthAnchor.constraint(equalToConstant: smallLabelWidths),
                   precipChanceIcon.heightAnchor.constraint(equalToConstant: 32),
                   
@@ -226,7 +226,7 @@ class DetailWeatherView: UIView {
                   minTempIcon.heightAnchor.constraint(equalToConstant: 32),
                   
                   NSLayoutConstraint(item: precipChanceLabel, attribute: .top, relatedBy: .equal, toItem: precipChanceIcon, attribute: .bottom, multiplier: 1.0, constant: 0),
-                  NSLayoutConstraint(item: precipChanceLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 20),
+                  NSLayoutConstraint(item: precipChanceLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
                   precipChanceLabel.widthAnchor.constraint(equalToConstant: smallLabelWidths),
                   precipChanceLabel.heightAnchor.constraint(equalToConstant: 32),
 
