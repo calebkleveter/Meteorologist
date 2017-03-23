@@ -206,7 +206,7 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: precipChanceLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -15),
                 NSLayoutConstraint(item: precipChanceLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
                 precipChanceLabel.heightAnchor.constraint(equalToConstant: 20),
-                precipChanceLabel.widthAnchor.constraint(equalToConstant: 60),
+                precipChanceLabel.widthAnchor.constraint(equalToConstant: 70),
                 
                 NSLayoutConstraint(item: precipChanceIcon, attribute: .right, relatedBy: .equal, toItem: precipChanceLabel, attribute: .left, multiplier: 1.0, constant: -10),
                 NSLayoutConstraint(item: precipChanceIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
@@ -216,7 +216,7 @@ class WeatherTableView: UIView {
                 NSLayoutConstraint(item: humidityLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: -15),
                 NSLayoutConstraint(item: humidityLabel, attribute: .top, relatedBy: .equal, toItem: precipChanceLabel, attribute: .bottom, multiplier: 1.0, constant: 10),
                 humidityLabel.heightAnchor.constraint(equalToConstant: 20),
-                humidityLabel.widthAnchor.constraint(equalToConstant: 60),
+                humidityLabel.widthAnchor.constraint(equalToConstant: 70),
                 
                 NSLayoutConstraint(item: humidityIcon, attribute: .right, relatedBy: .equal, toItem: humidityLabel, attribute: .left, multiplier: 1.0, constant: -10),
                 NSLayoutConstraint(item: humidityIcon, attribute: .top, relatedBy: .equal, toItem: precipChanceIcon, attribute: .bottom, multiplier: 1.0, constant: 3),
