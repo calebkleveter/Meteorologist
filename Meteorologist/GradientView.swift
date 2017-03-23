@@ -36,3 +36,19 @@ class GradientView: UIView {
     }
     
 }
+
+extension UIView {
+    func addGradient() {
+        let gradient = GradientView(frame: self.frame)
+        self.addSubview(gradient)
+        gradient.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: gradient, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: gradient, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: gradient, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: gradient, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0),
+            ])
+        self.sendSubview(toBack: gradient)
+    }
+}
