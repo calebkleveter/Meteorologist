@@ -30,7 +30,7 @@ class LocationPickerView: UIView {
     
     lazy var selectLocationButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
-        button.backgroundColor = .clear
+        button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.4)
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         button.titleLabel?.lineBreakMode = .byWordWrapping
@@ -42,7 +42,7 @@ class LocationPickerView: UIView {
     
     lazy var useCurrentLocationButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
-        button.backgroundColor = .clear
+        button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.4)
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         button.titleLabel?.lineBreakMode = .byWordWrapping
