@@ -133,12 +133,8 @@ class DetailWeatherView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        let backgroundGradient = GradientView(frame: frame)
-        self.addSubview(backgroundGradient)
-        self.sendSubview(toBack: backgroundGradient)
-        
         configureLayout()
+        self.addGradient()
     }
     
     required init?(coder aDecoder: NSCoder) {
