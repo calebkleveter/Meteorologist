@@ -56,6 +56,7 @@ extension LocationPickerController: MKMapViewDelegate {
 
 extension LocationPickerController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        _ = searchBar.resignFirstResponder()
         let searchRequest = MKLocalSearchRequest()
         searchRequest.naturalLanguageQuery = searchBar.text
         
