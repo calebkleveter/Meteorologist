@@ -33,6 +33,7 @@ class LocationPickerView: UIView {
         button.backgroundColor = .clear
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        button.titleLabel?.lineBreakMode = .byWordWrapping
         button.setTitle("Use Selected Location", for: .normal)
         button.isUserInteractionEnabled = true
         button.addTarget(self, action: #selector(LocationPickerView.selectedLocationButtonAction), for: .touchUpInside)
@@ -44,6 +45,7 @@ class LocationPickerView: UIView {
         button.backgroundColor = .clear
         button.tintColor = .white
         button.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        button.titleLabel?.lineBreakMode = .byWordWrapping
         button.setTitle("Use Current Location", for: .normal)
         button.isUserInteractionEnabled = true
         button.addTarget(self, action: #selector(LocationPickerView.currentLocationButtonAction), for: .touchUpInside)
