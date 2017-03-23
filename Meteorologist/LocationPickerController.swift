@@ -94,6 +94,9 @@ extension LocationPickerController: LocationPickerViewDelegate {
     }
     
     func useCurrentLocation() {
+        if let currentLocation = self.pickerView?.mapView.userLocation.coordinate {
+            self.pickerView?.mapView.setCenter(currentLocation, animated: false)
+        }
         self.delegate?.dismissedWithCurrentLocation()
         self.dismiss(animated: true, completion: nil)
     }
