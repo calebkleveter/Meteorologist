@@ -1,5 +1,10 @@
 # Meteorologist
 
+
+[![Weather overview][1]][1]
+[![Location selection][2]][2]
+[![Weather detail][3]][3]
+
 A simple weather app that uses a few APIs and libraries such as:
 
 - [Dark Sky API](https://darksky.net/)
@@ -23,3 +28,8 @@ If you want to run this app you will need:
 - A Dark Sky account
 
 Create a file called `Secure.swift` and add a constant called `API_KEY` with your API key.
+
+
+[1]: https://i.stack.imgur.com/agGVI.png
+[2]: https://i.stack.imgur.com/b7gZo.png
+[3]: https://i.stack.imgur.com/in8tt.png
