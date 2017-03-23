@@ -22,7 +22,7 @@ class WeatherMasterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view = GradientView(frame: self.view.frame)
+        self.view.addGradient()
         
         self.dailyWeatherTable.refreshControl = UIRefreshControl()
         self.dailyWeatherTable.refreshControl?.addTarget(self, action: #selector(WeatherMasterController.tableRefresh), for: UIControlEvents.allEvents)
@@ -40,12 +40,6 @@ class WeatherMasterController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        weatherFetch.getJSON(from: constructAPIURL(from: currentLocation)) { (current, daily) in
-            self.dailyWeatherView.reloadData(from: current)
-            self.daily = daily
-            self.assignDelegates()
-        }
         
         dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200)
         
