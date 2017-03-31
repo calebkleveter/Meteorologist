@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001063261E8F070300CEAEA2 /* DetailWeatherDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001063251E8F070300CEAEA2 /* DetailWeatherDataView.swift */; };
 		0073412F1E7372F1007F0B65 /* WeatherDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0073412E1E7372F1007F0B65 /* WeatherDetailController.swift */; };
 		0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A1C41E64A7C1002A026D /* WeatherTableView.swift */; };
 		009528C71E8052AC006D4467 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 009528C61E80528C006D4467 /* ionicons.ttf */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		001063251E8F070300CEAEA2 /* DetailWeatherDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWeatherDataView.swift; sourceTree = "<group>"; };
 		0073412E1E7372F1007F0B65 /* WeatherDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailController.swift; sourceTree = "<group>"; };
 		0076A1C41E64A7C1002A026D /* WeatherTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 		009528C61E80528C006D4467 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				00A59D641E6E10D9009B9C39 /* DailyWeatherTable.swift */,
 				00A59D661E6E1EC1009B9C39 /* DetailWeatherView.swift */,
 				00A7F3781E816717008B1077 /* LocationPickerView.swift */,
+				001063251E8F070300CEAEA2 /* DetailWeatherDataView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				009528CD1E80869D006D4467 /* APIClient+URL.swift in Sources */,
 				00A59D651E6E10D9009B9C39 /* DailyWeatherTable.swift in Sources */,
 				00B9A7491E526C4100D675AB /* WeatherIcons.swift in Sources */,
+				001063261E8F070300CEAEA2 /* DetailWeatherDataView.swift in Sources */,
 				00A7F37B1E817494008B1077 /* LocationPickerController.swift in Sources */,
 				00A59D611E6E06DC009B9C39 /* DailyWeatherCell.swift in Sources */,
 				00BA6B0B1E68C5A00088151D /* GradientView.swift in Sources */,
