@@ -82,6 +82,18 @@ class WeatherMasterController: UIViewController {
             }
         }
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        switch UIDevice.current.orientation {
+        case .landscapeLeft: print("Landscape left")
+        case .landscapeRight: print("Landscape ritgh")
+        case .portrait: print("Portrait")
+        case .portraitUpsideDown: print("Upside down")
+        default: print("Unneeded information")
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
