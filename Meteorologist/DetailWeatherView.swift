@@ -133,6 +133,7 @@ class DetailWeatherView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addSubviews()
         configureLayout()
         self.addGradient()
     }
@@ -151,10 +152,7 @@ class DetailWeatherView: UIView {
         self.summaryLabel.text = weather.summary
     }
     
-    func configureLayout() {
-        
-        let smallLabelWidths = (self.frame.size.width) / 5
-        
+    func addSubviews() {
         self.addSubview(dayLabel)
         self.addSubview(weatherIcon)
         self.addSubview(precipChanceLabel)
@@ -184,6 +182,11 @@ class DetailWeatherView: UIView {
         windSpeedIcon.translatesAutoresizingMaskIntoConstraints = false
         summaryLabel.translatesAutoresizingMaskIntoConstraints = false
         attributionButton.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func configureLayout() {
+        
+        let smallLabelWidths = (self.frame.size.width) / 5
         
         NSLayoutConstraint.activate([
                   NSLayoutConstraint(item: dayLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 78),
