@@ -185,6 +185,7 @@ class DetailWeatherView: UIView {
     }
     
     func configureLayout() {
+        _ = self.subviews.map { $0.removeConstraints($0.constraints) }
         
         let smallLabelWidths = (self.frame.size.width) / 5
         
