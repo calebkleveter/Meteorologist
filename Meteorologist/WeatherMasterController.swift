@@ -97,26 +97,6 @@ class WeatherMasterController: UIViewController {
             }
         }
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        
-        switch UIDevice.current.orientation {
-        case .landscapeLeft:
-            dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width / 2, height: self.view.frame.size.height - 50)
-            dailyWeatherTable.frame = CGRect(x: self.view.frame.size.width / 2, y: 50, width: self.view.frame.size.width / 2, height: self.view.frame.size.height - 50)
-        case .landscapeRight:
-            dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width / 2, height: self.view.frame.size.height - 50)
-            dailyWeatherTable.frame = CGRect(x: self.view.frame.size.width / 2, y: 50, width: self.view.frame.size.width / 2, height: self.view.frame.size.height - 50)
-        case .portrait:
-            dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200)
-            dailyWeatherTable.frame = CGRect(x: 0, y: 250, width: self.view.frame.size.width, height: self.view.frame.size.height - 250)
-        case .portraitUpsideDown:
-            dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200)
-            dailyWeatherTable.frame = CGRect(x: 0, y: 250, width: self.view.frame.size.width, height: self.view.frame.size.height - 250)
-        default: print("Unneeded information")
-        }
-    }
 }
 
 // MARK: - UITableViewDataSource
