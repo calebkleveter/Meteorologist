@@ -39,6 +39,8 @@ class WeatherMasterController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        _ = self.view.subviews.map { $0.removeFromSuperview() }
+        
         self.view.addSubview(GradientView(frame: self.view.frame))
         
         switch UIDevice.current.orientation {
