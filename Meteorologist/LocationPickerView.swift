@@ -54,7 +54,7 @@ class LocationPickerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureLayout()
+        addSubviews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,7 +69,7 @@ class LocationPickerView: UIView {
         self.delegate?.useCurrentLocation()
     }
     
-    func configureLayout() {
+    func addSubviews() {
         self.addSubview(mapView)
         self.addSubview(useCurrentLocationButton)
         self.addSubview(selectLocationButton)
@@ -79,6 +79,11 @@ class LocationPickerView: UIView {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         selectLocationButton.translatesAutoresizingMaskIntoConstraints = false
         useCurrentLocationButton.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func configureLayout() {
+        
+        _ = self.subviews.map { $0.removeConstraints($0.constraints) }
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: mapView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0),
