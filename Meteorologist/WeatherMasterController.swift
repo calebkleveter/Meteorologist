@@ -39,7 +39,7 @@ class WeatherMasterController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        _ = self.view.subviews.map { $0.removeFromSuperview() }
+        _ = self.view.subviews.filter({return ($0 as? GradientView) != nil }).map({ $0.removeFromSuperview() })
         
         self.view.addSubview(GradientView(frame: self.view.frame))
         
