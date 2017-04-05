@@ -31,7 +31,6 @@ class LocationPickerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView = LocationPickerView(frame: self.view.frame)
-        self.view.addSubview(pickerView!)
         self.pickerView?.delegate = self
         self.pickerView?.mapView.delegate = self
         self.pickerView?.searchBar.delegate = self
@@ -39,8 +38,14 @@ class LocationPickerController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        _ = self.view.subviews.filter({return ($0 as? GradientView) != nil }).map({ $0.removeFromSuperview() })
+        
+        self.view.addSubview(GradientView(frame: self.view.frame))
+        pickerView?.frame = self.view.frame
+        self.view.addSubview(pickerView!)
+        pickerView?.configureLayout()
     }
-
 }
 
 extension LocationPickerController: MKMapViewDelegate {
