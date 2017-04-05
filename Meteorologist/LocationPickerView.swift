@@ -55,7 +55,6 @@ class LocationPickerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
-        self.addGradient()
     }
     
     required init?(coder aDecoder: NSCoder) {
