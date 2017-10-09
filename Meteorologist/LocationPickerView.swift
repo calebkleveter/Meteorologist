@@ -16,7 +16,7 @@ protocol LocationPickerViewDelegate: class {
 
 class LocationPickerView: UIView {
     
-    var delegate: LocationPickerViewDelegate?
+    weak var delegate: LocationPickerViewDelegate?
     
     lazy var mapView: MKMapView = {
         let map = MKMapView()

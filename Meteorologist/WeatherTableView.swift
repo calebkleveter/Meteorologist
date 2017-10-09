@@ -14,7 +14,7 @@ protocol WeatherTableViewDelegate: class {
 
 class WeatherTableView: UIView {
     
-    var delegate: WeatherTableViewDelegate?
+    weak var delegate: WeatherTableViewDelegate?
     
     lazy var tempHighIcon: UILabel = {
         let label = UILabel()

@@ -18,7 +18,7 @@ class LocationPickerController: UIViewController {
 
     var pickerView: LocationPickerView? = nil
     var newLocation: CLLocationCoordinate2D?
-    var delegate: LocationPickerContollerDelegate?
+    weak var delegate: LocationPickerContollerDelegate?
     
     init() {
         super.init(nibName: nil, bundle: nil)

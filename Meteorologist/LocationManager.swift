@@ -15,7 +15,7 @@ protocol LocationManagerDelegate: class {
 
 class LocationManager: NSObject {
     let locationManager = CLLocationManager()
-    var delegate: LocationManagerDelegate?
+    weak var delegate: LocationManagerDelegate?
     
     override init() {
         super.init()
