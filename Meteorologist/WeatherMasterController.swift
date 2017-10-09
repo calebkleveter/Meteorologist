@@ -88,11 +88,11 @@ class WeatherMasterController: UIViewController {
     }
     
     func assignDelegates() {
-        if self.dailyWeatherTable.dataSource == nil && self.dailyWeatherTable.delegate == nil {
-            self.dailyWeatherTable.dataSource = self
-            self.dailyWeatherTable.delegate = self
-        } else {
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            if self.dailyWeatherTable.dataSource == nil && self.dailyWeatherTable.delegate == nil {
+                self.dailyWeatherTable.dataSource = self
+                self.dailyWeatherTable.delegate = self
+            } else {
                 self.dailyWeatherTable.reloadData()
             }
         }
