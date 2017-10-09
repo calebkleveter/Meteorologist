@@ -82,7 +82,7 @@ class WeatherMasterController: UIViewController {
         }
     }
     
-    func tableRefresh(_ sender: AnyObject?) {
+    @objc func tableRefresh(_ sender: AnyObject?) {
         self.refresh(from: currentLocation.coordinate)
         self.dailyWeatherTable.refreshControl?.endRefreshing()
     }

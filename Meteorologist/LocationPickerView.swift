@@ -61,11 +61,11 @@ class LocationPickerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func selectedLocationButtonAction(_ sender: AnyObject?) {
+    @objc func selectedLocationButtonAction(_ sender: AnyObject?) {
         self.delegate?.useSelectedLocation()
     }
     
-    func currentLocationButtonAction(_ sender: AnyObject?) {
+    @objc func currentLocationButtonAction(_ sender: AnyObject?) {
         self.delegate?.useCurrentLocation()
     }
     

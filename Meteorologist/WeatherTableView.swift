@@ -134,7 +134,7 @@ class WeatherTableView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func locationButtonSelected(_ sender: AnyObject?) {
+    @objc func locationButtonSelected(_ sender: AnyObject?) {
         self.delegate?.locationButtonWasSelected()
     }
     

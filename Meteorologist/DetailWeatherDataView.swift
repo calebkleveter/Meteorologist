@@ -109,7 +109,7 @@ class DetailWeatherDataView: UIView {
         
     }()
     
-    func attributionSelector(_ sender: AnyObject?) {
+    @objc func attributionSelector(_ sender: AnyObject?) {
         if let url = URL(string: "https://darksky.net/poweredby/") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
