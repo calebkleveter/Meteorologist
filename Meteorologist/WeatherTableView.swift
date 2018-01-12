@@ -208,7 +208,7 @@ class WeatherTableView: UIView {
                 precipChanceLabel.heightAnchor.constraint(equalToConstant: 20),
                 precipChanceLabel.widthAnchor.constraint(equalToConstant: 70),
                 
-                NSLayoutConstraint(item: precipChanceIcon, attribute: .right, relatedBy: .equal, toItem: precipChanceLabel, attribute: .left, multiplier: 1.0, constant: -10),
+                NSLayoutConstraint(item: precipChanceIcon, attribute: .right, relatedBy: .equal, toItem: precipChanceLabel, attribute: .left, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: precipChanceIcon, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 20),
                 precipChanceIcon.heightAnchor.constraint(equalToConstant: 27),
                 precipChanceIcon.widthAnchor.constraint(equalToConstant: 17),
@@ -218,7 +218,7 @@ class WeatherTableView: UIView {
                 humidityLabel.heightAnchor.constraint(equalToConstant: 20),
                 humidityLabel.widthAnchor.constraint(equalToConstant: 70),
                 
-                NSLayoutConstraint(item: humidityIcon, attribute: .right, relatedBy: .equal, toItem: humidityLabel, attribute: .left, multiplier: 1.0, constant: -10),
+                NSLayoutConstraint(item: humidityIcon, attribute: .right, relatedBy: .equal, toItem: humidityLabel, attribute: .left, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: humidityIcon, attribute: .top, relatedBy: .equal, toItem: precipChanceIcon, attribute: .bottom, multiplier: 1.0, constant: 3),
                 humidityIcon.heightAnchor.constraint(equalToConstant: 25),
                 humidityIcon.widthAnchor.constraint(equalToConstant: 17),
@@ -228,7 +228,7 @@ class WeatherTableView: UIView {
                 windSpeedLabel.heightAnchor.constraint(equalToConstant: 20),
                 windSpeedLabel.widthAnchor.constraint(equalToConstant: 75),
                 
-                NSLayoutConstraint(item: windSpeedIcon, attribute: .right, relatedBy: .equal, toItem: windSpeedLabel, attribute: .left, multiplier: 1.0, constant: -10),
+                NSLayoutConstraint(item: windSpeedIcon, attribute: .right, relatedBy: .equal, toItem: windSpeedLabel, attribute: .left, multiplier: 1.0, constant: 0),
                 NSLayoutConstraint(item: windSpeedIcon, attribute: .top, relatedBy: .equal, toItem: humidityIcon, attribute: .bottom, multiplier: 1.0, constant: 3),
                 windSpeedIcon.heightAnchor.constraint(equalToConstant: 25),
                 windSpeedIcon.widthAnchor.constraint(equalToConstant: 25),
