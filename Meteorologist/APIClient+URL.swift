@@ -14,6 +14,5 @@ func constructAPIURL(from location: CLLocation) -> String {
     let latitude = location.coordinate.latitude
     let longtitude = location.coordinate.longitude
     let url = "\(baseURL)\(API_KEY)/\(latitude),\(longtitude)"
-    print(url)
     return url
 }
