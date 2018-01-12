@@ -126,11 +126,26 @@ class DetailWeatherDataView: UIView {
     }
     
     func reloadData(with weather: DailyWeather) {
-        if let max = weather.maxTemp { self.maxTempLabel.text = "\(Float(roundf(max*10)/10))º" } else { self.maxTempLabel.text = "N/A" }
-        if let min = weather.minTemp { self.minTempLabel.text = "\(Float(roundf(min*10)/10))º" } else { self.minTempLabel.text = "N/A" }
-        if let precip = weather.precipChance { self.precipChanceLabel.text = "\(Int(roundf(precip*1000)/10))%" } else { self.precipChanceLabel.text = "N/A" }
-        if let humidity = weather.humidity { self.humidityLabel.text = "\(Int(roundf(humidity*1000)/10))%" } else { self.humidityLabel.text = "N/A" }
-        if let windSpeed = weather.windSpeed { self.windSpeedLabel.text = "\(Int(roundf(windSpeed*10)/10))mph" } else { self.windSpeedLabel.text = "N/A" }
+        if let max = weather.maxTemp {
+            self.maxTempLabel.text = "\(Float(roundf(max*10)/10))º"
+        } else { self.maxTempLabel.text = "N/A" }
+        
+        if let min = weather.minTemp {
+            self.minTempLabel.text = "\(Float(roundf(min*10)/10))º"
+        } else { self.minTempLabel.text = "N/A" }
+        
+        if let precip = weather.precipChance {
+            self.precipChanceLabel.text = "\(Int(roundf(precip*1000)/10))%"
+        } else { self.precipChanceLabel.text = "N/A" }
+        
+        if let humidity = weather.humidity {
+            self.humidityLabel.text = "\(Int(roundf(humidity*1000)/10))%"
+        } else { self.humidityLabel.text = "N/A" }
+        
+        if let windSpeed = weather.windSpeed {
+            self.windSpeedLabel.text = "\(Int(roundf(windSpeed*10)/10))mph"
+        } else { self.windSpeedLabel.text = "N/A" }
+        
         self.summaryLabel.text = weather.summary
     }
     
