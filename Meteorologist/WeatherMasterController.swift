@@ -47,15 +47,19 @@ class WeatherMasterController: UIViewController {
         case .landscapeLeft:
             dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width / 2, height: self.view.frame.size.height - 50)
             dailyWeatherTable.frame = CGRect(x: self.view.frame.size.width / 2, y: 50, width: self.view.frame.size.width / 2, height: self.view.frame.size.height - 50)
+            dailyWeatherView.currentWeatherIcon.font = UIFont(name: "WeatherIcons-Regular", size: 60)
         case .landscapeRight:
             dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width / 2, height: self.view.frame.size.height - 50)
             dailyWeatherTable.frame = CGRect(x: self.view.frame.size.width / 2, y: 50, width: self.view.frame.size.width / 2, height: self.view.frame.size.height - 50)
+            dailyWeatherView.currentWeatherIcon.font = UIFont(name: "WeatherIcons-Regular", size: 60)
         case .portrait:
             dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200)
             dailyWeatherTable.frame = CGRect(x: 0, y: 250, width: self.view.frame.size.width, height: self.view.frame.size.height - 250)
+            dailyWeatherView.currentWeatherIcon.font = UIFont(name: "WeatherIcons-Regular", size: 71)
         case .portraitUpsideDown:
             dailyWeatherView.frame = CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 200)
             dailyWeatherTable.frame = CGRect(x: 0, y: 250, width: self.view.frame.size.width, height: self.view.frame.size.height - 250)
+            dailyWeatherView.currentWeatherIcon.font = UIFont(name: "WeatherIcons-Regular", size: 71)
         default: print("Unneeded information")
         }
         
