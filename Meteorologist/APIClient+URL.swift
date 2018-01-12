@@ -9,10 +9,12 @@
 import Foundation
 import CoreLocation
 
-func constructAPIURL(from location: CLLocation) -> String {
-    let baseURL = "https://api.darksky.net/forecast/"
-    let latitude = location.coordinate.latitude
-    let longtitude = location.coordinate.longitude
-    let url = "\(baseURL)\(API_KEY)/\(latitude),\(longtitude)"
-    return url
+extension URL {
+    static func construct(from location: CLLocation) -> String {
+        let baseURL = "https://api.darksky.net/forecast/"
+        let latitude = location.coordinate.latitude
+        let longtitude = location.coordinate.longitude
+        let url = "\(baseURL)\(API_KEY)/\(latitude),\(longtitude)"
+        return url
+    }
 }

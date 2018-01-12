@@ -72,7 +72,8 @@ class WeatherMasterController: UIViewController {
 
     func refresh(from location: CLLocationCoordinate2D) {
         let location = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        weatherFetch.getJSON(from: constructAPIURL(from: location)) { (current, daily) in
+        let url = URL.construct(from: location)
+        weatherFetch.getJSON(from: url) { (current, daily) in
             self.dailyWeatherView.reloadData(from: current)
             self.daily = daily
             self.assignDelegates()
