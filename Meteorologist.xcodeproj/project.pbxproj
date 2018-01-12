@@ -12,7 +12,6 @@
 		0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A1C41E64A7C1002A026D /* WeatherTableView.swift */; };
 		009528C71E8052AC006D4467 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 009528C61E80528C006D4467 /* ionicons.ttf */; };
 		009528C91E806FA4006D4467 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009528C81E806FA4006D4467 /* LocationManager.swift */; };
-		009528CB1E807619006D4467 /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009528CA1E807619006D4467 /* Secure.swift */; };
 		009528CD1E80869D006D4467 /* APIClient+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009528CC1E80869D006D4467 /* APIClient+URL.swift */; };
 		00A59D611E6E06DC009B9C39 /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A59D601E6E06DC009B9C39 /* DailyWeatherCell.swift */; };
 		00A59D631E6E087F009B9C39 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A59D621E6E087F009B9C39 /* Date.swift */; };
@@ -33,6 +32,7 @@
 		00BA6B0D1E68CDDB0088151D /* WeatherMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */; };
 		00BA6B0F1E68D5AF0088151D /* JSONFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B0E1E68D5AF0088151D /* JSONFetcher.swift */; };
 		00BA6B111E68D7500088151D /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B101E68D7500088151D /* WeatherData.swift */; };
+		00F7821C2007B75E0069BE73 /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7821B2007B75E0069BE73 /* Secure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		0076A1C41E64A7C1002A026D /* WeatherTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 		009528C61E80528C006D4467 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
 		009528C81E806FA4006D4467 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		009528CA1E807619006D4467 /* Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secure.swift; sourceTree = "<group>"; };
 		009528CC1E80869D006D4467 /* APIClient+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIClient+URL.swift"; sourceTree = "<group>"; };
 		00A59D601E6E06DC009B9C39 /* DailyWeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
 		00A59D621E6E087F009B9C39 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMasterController.swift; sourceTree = "<group>"; };
 		00BA6B0E1E68D5AF0088151D /* JSONFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFetcher.swift; sourceTree = "<group>"; };
 		00BA6B101E68D7500088151D /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		00F7821B2007B75E0069BE73 /* Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +192,7 @@
 				00B9A7221E5267C900D675AB /* Info.plist */,
 				00B9A7461E526BDA00D675AB /* weathericons-regular-webfont.ttf */,
 				009528C61E80528C006D4467 /* ionicons.ttf */,
-				009528CA1E807619006D4467 /* Secure.swift */,
+				00F7821B2007B75E0069BE73 /* Secure.swift */,
 			);
 			path = Meteorologist;
 			sourceTree = "<group>";
@@ -283,7 +283,7 @@
 				TargetAttributes = {
 					00B9A7121E5267C900D675AB = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = P8R3PQHXU5;
+						DevelopmentTeam = 2FCTD2HJA7;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -361,6 +361,7 @@
 			files = (
 				00A59D671E6E1EC1009B9C39 /* DetailWeatherView.swift in Sources */,
 				00BA6B0D1E68CDDB0088151D /* WeatherMasterController.swift in Sources */,
+				00F7821C2007B75E0069BE73 /* Secure.swift in Sources */,
 				00A59D631E6E087F009B9C39 /* Date.swift in Sources */,
 				0073412F1E7372F1007F0B65 /* WeatherDetailController.swift in Sources */,
 				0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */,
@@ -373,7 +374,6 @@
 				00BA6B0B1E68C5A00088151D /* GradientView.swift in Sources */,
 				00B9A7171E5267C900D675AB /* AppDelegate.swift in Sources */,
 				00A7F3791E816717008B1077 /* LocationPickerView.swift in Sources */,
-				009528CB1E807619006D4467 /* Secure.swift in Sources */,
 				009528C91E806FA4006D4467 /* LocationManager.swift in Sources */,
 				00B9A7451E52694B00D675AB /* APIClient.swift in Sources */,
 				00BA6B111E68D7500088151D /* WeatherData.swift in Sources */,
@@ -533,12 +533,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P8R3PQHXU5;
+				DEVELOPMENT_TEAM = 2FCTD2HJA7;
 				INFOPLIST_FILE = Meteorologist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "caleb-kleveter.Meteorologist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.caleb-kleveter.Meteorologist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -547,12 +547,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P8R3PQHXU5;
+				DEVELOPMENT_TEAM = 2FCTD2HJA7;
 				INFOPLIST_FILE = Meteorologist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "caleb-kleveter.Meteorologist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.caleb-kleveter.Meteorologist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
