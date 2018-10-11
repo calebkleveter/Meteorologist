@@ -3,104 +3,110 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "icon40-2.png",
+      "filename" : "meteorologist-iphone-20.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "icon60.png",
+      "filename" : "meteorologist-iphone-20@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icon29x2-1.png",
+      "filename" : "meteorologist-iphone-29.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icon29x3.png",
+      "filename" : "meteorologist-iphone-29@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icon40x2-1.png",
+      "filename" : "meteorologist-iphone-40.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icon40x3.png",
+      "filename" : "meteorologist-iphone-40@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icon40x3-1.png",
+      "filename" : "meteorologist-iphone-60.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icon60x3.png",
+      "filename" : "meteorologist-iphone-60@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "icon20.png",
+      "filename" : "meteorologist-ipad-20.png",
       "scale" : "1x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "icon40-1.png",
+      "filename" : "meteorologist-ipad-20@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "icon29.png",
+      "filename" : "meteorologist-ipad-29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "icon29x2.png",
+      "filename" : "meteorologist-ipad-29@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "icon40.png",
+      "filename" : "meteorologist-ipad-40.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "icon40x2.png",
+      "filename" : "meteorologist-ipad-40@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "icon76.png",
+      "filename" : "meteorologist-ipad-76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "icon76x2.png",
+      "filename" : "meteorologist-ipad-76@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "icon84x2.png",
+      "filename" : "meteorologist-ipad-83.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "meteorologist-appstore.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

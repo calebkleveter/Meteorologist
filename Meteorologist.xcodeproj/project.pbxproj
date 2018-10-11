@@ -32,7 +32,7 @@
 		00BA6B0D1E68CDDB0088151D /* WeatherMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */; };
 		00BA6B0F1E68D5AF0088151D /* JSONFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B0E1E68D5AF0088151D /* JSONFetcher.swift */; };
 		00BA6B111E68D7500088151D /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA6B101E68D7500088151D /* WeatherData.swift */; };
-		00F7821C2007B75E0069BE73 /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7821B2007B75E0069BE73 /* Secure.swift */; };
+		00C4E38820CAF6D700B98867 /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C4E38720CAF6D700B98867 /* Secure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,7 @@
 		00BA6B0C1E68CDDB0088151D /* WeatherMasterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMasterController.swift; sourceTree = "<group>"; };
 		00BA6B0E1E68D5AF0088151D /* JSONFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFetcher.swift; sourceTree = "<group>"; };
 		00BA6B101E68D7500088151D /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
-		00F7821B2007B75E0069BE73 /* Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secure.swift; sourceTree = "<group>"; };
+		00C4E38720CAF6D700B98867 /* Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +192,7 @@
 				00B9A7221E5267C900D675AB /* Info.plist */,
 				00B9A7461E526BDA00D675AB /* weathericons-regular-webfont.ttf */,
 				009528C61E80528C006D4467 /* ionicons.ttf */,
-				00F7821B2007B75E0069BE73 /* Secure.swift */,
+				00C4E38720CAF6D700B98867 /* Secure.swift */,
 			);
 			path = Meteorologist;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Caleb Kleveter";
 				TargetAttributes = {
 					00B9A7121E5267C900D675AB = {
@@ -361,7 +361,7 @@
 			files = (
 				00A59D671E6E1EC1009B9C39 /* DetailWeatherView.swift in Sources */,
 				00BA6B0D1E68CDDB0088151D /* WeatherMasterController.swift in Sources */,
-				00F7821C2007B75E0069BE73 /* Secure.swift in Sources */,
+				00C4E38820CAF6D700B98867 /* Secure.swift in Sources */,
 				00A59D631E6E087F009B9C39 /* Date.swift in Sources */,
 				0073412F1E7372F1007F0B65 /* WeatherDetailController.swift in Sources */,
 				0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */,
@@ -437,6 +437,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -444,6 +445,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -493,6 +495,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -500,6 +503,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
