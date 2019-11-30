@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 struct WeatherIcon {
-    
     static func set(_ label: UILabel, textTo icon: Icon, with size: CGFloat) {
         label.textColor = .white
         label.font = UIFont(name: "WeatherIcons-Regular", size: size)
@@ -18,7 +18,7 @@ struct WeatherIcon {
         label.backgroundColor = .clear
     }
     
-    enum Icon {
+    enum Icon: Hashable, CaseIterable {
         case clearDay
         case clearNight
         case rain
@@ -34,7 +34,7 @@ struct WeatherIcon {
         case down
         case humidity
         case precipitation
-        
+
         var hex: String {
             switch self {
             case .clearDay: return "\u{f00d}"
@@ -54,7 +54,11 @@ struct WeatherIcon {
             case .precipitation: return "\u{f04e}"
             }
         }
-        
+
+        func text(size: CGFloat) -> Text {
+            return Text(self.hex).font(.custom("WeatherIcons-Regular", size: size))
+        }
+
         static func getIcon(from string: String) -> Icon {
             switch string.uppercased() {
             case "CLEAR-DAY": return .clearDay
