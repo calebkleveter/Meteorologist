@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ForecastList: View {
     struct Day: Identifiable {
-        let icon: WeatherIcon.Icon
+        let weather: DailyWeather
         let date: String
 
         var id: String { self.date }
@@ -18,10 +18,10 @@ struct ForecastList: View {
 
     @State var days: [Day]
 
-    init(icons: [WeatherIcon.Icon]) {
+    init(weather: [DailyWeather]) {
         self._days = State(wrappedValue:
-            icons.enumerated().map { offset, icon in
-                Day(icon: icon, date: Date.abbreviatedDate(advancedBy: offset))
+            weather.enumerated().map { offset, day in
+                Day(weather: dayc, date: Date.abbreviatedDate(advancedBy: offset))
             }
         )
     }
@@ -30,7 +30,7 @@ struct ForecastList: View {
         List(self.days, rowContent: { day in
             HStack(alignment: .center, spacing: 15) {
                 Text(day.date).font(.system(size: 30))
-                day.icon.text(size: 40)
+                day.weather.icon.text(size: 40)
             }
         })
     }
@@ -40,7 +40,11 @@ struct ForecastList: View {
 
 struct ForecastList_Preview: PreviewProvider {
     static var previews: ForecastList {
-        return ForecastList(icons: Array(repeating: .unSupported, count: 7))
+        let weather = [
+            DailyWeather(icon: .clearDay, summary: "Mostly sunny, followed by large UFOs attacking from outerspace.", precipChance: 0.32, maxTemp: 53.0, minTemp: 32.5, humidity: 0.55, windSpeed: 3.2)
+        ]
+
+        return ForecastList(weather: weather)
     }
 }
 

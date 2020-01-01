@@ -19,7 +19,7 @@ struct MainView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             CurrentWeatherView(data: self.weather.current)
-            ForecastList(icons: self.weather.daily.map { $0.icon })
+            ForecastList(weather: self.weather.daily)
         }
     }
 }
