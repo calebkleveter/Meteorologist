@@ -21,7 +21,7 @@ struct ForecastList: View {
     init(weather: [DailyWeather]) {
         self._days = State(wrappedValue:
             weather.enumerated().map { offset, day in
-                Day(weather: dayc, date: Date.abbreviatedDate(advancedBy: offset))
+                Day(weather: day, date: Date.abbreviatedDate(advancedBy: offset))
             }
         )
     }
