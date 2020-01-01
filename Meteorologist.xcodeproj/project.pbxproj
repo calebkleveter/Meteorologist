@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		001063261E8F070300CEAEA2 /* DetailWeatherDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001063251E8F070300CEAEA2 /* DetailWeatherDataView.swift */; };
+		006B8BEB23BCFCEC00AF11C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B8BEA23BCFCEC00AF11C6 /* SceneDelegate.swift */; };
 		0073412F1E7372F1007F0B65 /* WeatherDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0073412E1E7372F1007F0B65 /* WeatherDetailController.swift */; };
 		0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A1C41E64A7C1002A026D /* WeatherTableView.swift */; };
 		009528C71E8052AC006D4467 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 009528C61E80528C006D4467 /* ionicons.ttf */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		001063251E8F070300CEAEA2 /* DetailWeatherDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWeatherDataView.swift; sourceTree = "<group>"; };
+		006B8BEA23BCFCEC00AF11C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0073412E1E7372F1007F0B65 /* WeatherDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailController.swift; sourceTree = "<group>"; };
 		0076A1C41E64A7C1002A026D /* WeatherTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 		009528C61E80528C006D4467 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				00A59D5E1E6E066F009B9C39 /* Views */,
 				00A59D5D1E6E0652009B9C39 /* Models */,
 				00B9A7161E5267C900D675AB /* AppDelegate.swift */,
+				006B8BEA23BCFCEC00AF11C6 /* SceneDelegate.swift */,
 				00B9A7221E5267C900D675AB /* Info.plist */,
 				00B9A7461E526BDA00D675AB /* weathericons-regular-webfont.ttf */,
 				009528C61E80528C006D4467 /* ionicons.ttf */,
@@ -375,6 +378,7 @@
 				00C4E38820CAF6D700B98867 /* Secure.swift in Sources */,
 				00A59D631E6E087F009B9C39 /* Date.swift in Sources */,
 				0073412F1E7372F1007F0B65 /* WeatherDetailController.swift in Sources */,
+				006B8BEB23BCFCEC00AF11C6 /* SceneDelegate.swift in Sources */,
 				0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */,
 				00E2F17123931B18000AC255 /* MainView.swift in Sources */,
 				009528CD1E80869D006D4467 /* APIClient+URL.swift in Sources */,

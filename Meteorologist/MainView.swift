@@ -24,6 +24,23 @@ struct MainView: View {
     }
 }
 
+extension MainView {
+    static let start = MainView(
+        weather: .init(
+            current: .init(
+                icon: .unSupported,
+                precipChance: 0.0,
+                currentTemp: 0.0,
+                humidity: 0.0,
+                windSpeed: 0.0,
+                summary: "Unknown",
+                maxTemp: 0.0,
+                minTemp: 0.0
+            ),
+            daily: []
+        )
+    )
+}
 
 #if DEBUG
 
