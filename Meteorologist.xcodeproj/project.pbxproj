@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		001063261E8F070300CEAEA2 /* DetailWeatherDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001063251E8F070300CEAEA2 /* DetailWeatherDataView.swift */; };
 		006B8BEB23BCFCEC00AF11C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B8BEA23BCFCEC00AF11C6 /* SceneDelegate.swift */; };
+		006B8BEE23BD02A000AF11C6 /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = 006B8BED23BD02A000AF11C6 /* AsyncHTTPClient */; };
+		006B8BF023BD02DF00AF11C6 /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B8BEF23BD02DF00AF11C6 /* WeatherFetcher.swift */; };
 		0073412F1E7372F1007F0B65 /* WeatherDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0073412E1E7372F1007F0B65 /* WeatherDetailController.swift */; };
 		0076A1C51E64A7C1002A026D /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076A1C41E64A7C1002A026D /* WeatherTableView.swift */; };
 		009528C71E8052AC006D4467 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 009528C61E80528C006D4467 /* ionicons.ttf */; };
@@ -59,6 +61,7 @@
 /* Begin PBXFileReference section */
 		001063251E8F070300CEAEA2 /* DetailWeatherDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWeatherDataView.swift; sourceTree = "<group>"; };
 		006B8BEA23BCFCEC00AF11C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		006B8BEF23BD02DF00AF11C6 /* WeatherFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
 		0073412E1E7372F1007F0B65 /* WeatherDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailController.swift; sourceTree = "<group>"; };
 		0076A1C41E64A7C1002A026D /* WeatherTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 		009528C61E80528C006D4467 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006B8BEE23BD02A000AF11C6 /* AsyncHTTPClient in Frameworks */,
 				00A7F37E1E818367008B1077 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +135,7 @@
 				00A59D621E6E087F009B9C39 /* Date.swift */,
 				009528C81E806FA4006D4467 /* LocationManager.swift */,
 				009528CC1E80869D006D4467 /* APIClient+URL.swift */,
+				006B8BEF23BD02DF00AF11C6 /* WeatherFetcher.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,6 +248,9 @@
 			dependencies = (
 			);
 			name = Meteorologist;
+			packageProductDependencies = (
+				006B8BED23BD02A000AF11C6 /* AsyncHTTPClient */,
+			);
 			productName = Meteorologist;
 			productReference = 00B9A7131E5267C900D675AB /* Meteorologist.app */;
 			productType = "com.apple.product-type.application";
@@ -328,6 +336,9 @@
 				Base,
 			);
 			mainGroup = 00B9A70A1E5267C900D675AB;
+			packageReferences = (
+				006B8BEC23BD02A000AF11C6 /* XCRemoteSwiftPackageReference "async-http-client" */,
+			);
 			productRefGroup = 00B9A7141E5267C900D675AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -376,6 +387,7 @@
 				00E2F16D2392E9D9000AC255 /* CurrentWeatherView.swift in Sources */,
 				00BA6B0D1E68CDDB0088151D /* WeatherMasterController.swift in Sources */,
 				00C4E38820CAF6D700B98867 /* Secure.swift in Sources */,
+				006B8BF023BD02DF00AF11C6 /* WeatherFetcher.swift in Sources */,
 				00A59D631E6E087F009B9C39 /* Date.swift in Sources */,
 				0073412F1E7372F1007F0B65 /* WeatherDetailController.swift in Sources */,
 				006B8BEB23BCFCEC00AF11C6 /* SceneDelegate.swift in Sources */,
@@ -544,7 +556,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -557,7 +570,10 @@
 				DEVELOPMENT_TEAM = 2FCTD2HJA7;
 				INFOPLIST_FILE = Meteorologist/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.caleb-kleveter.Meteorologist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
@@ -572,7 +588,10 @@
 				DEVELOPMENT_TEAM = 2FCTD2HJA7;
 				INFOPLIST_FILE = Meteorologist/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.caleb-kleveter.Meteorologist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
@@ -586,7 +605,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MeteorologistTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "caleb-kleveter.MeteorologistTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -601,7 +624,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MeteorologistTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "caleb-kleveter.MeteorologistTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -615,7 +642,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MeteorologistUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "caleb-kleveter.MeteorologistUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -629,7 +660,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MeteorologistUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "caleb-kleveter.MeteorologistUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -678,6 +713,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		006B8BEC23BD02A000AF11C6 /* XCRemoteSwiftPackageReference "async-http-client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swift-server/async-http-client.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		006B8BED23BD02A000AF11C6 /* AsyncHTTPClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 006B8BEC23BD02A000AF11C6 /* XCRemoteSwiftPackageReference "async-http-client" */;
+			productName = AsyncHTTPClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00B9A70B1E5267C900D675AB /* Project object */;
 }
