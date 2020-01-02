@@ -9,11 +9,6 @@
 import SwiftUI
 
 struct MainView: View {
-    struct Weather {
-        let current: CurrentWeather
-        let daily: [DailyWeather]
-    }
-
     @State var weather: Weather
 
     var body: some View {
@@ -72,7 +67,7 @@ struct MainView_Preview: PreviewProvider {
             )
         ]
 
-        let weather = MainView.Weather(
+        let weather = Weather(
             current: current,
             daily: daily
         )

@@ -18,7 +18,7 @@ struct WeatherIcon {
         label.backgroundColor = .clear
     }
     
-    enum Icon: Hashable, CaseIterable {
+    enum Icon: String, Hashable, CaseIterable, Codable {
         case clearDay
         case clearNight
         case rain
